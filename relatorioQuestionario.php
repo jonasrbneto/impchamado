@@ -1,8 +1,12 @@
 <?php 
+require_once("validaAcesso.php");
 require_once("cabecalho.php");
 require_once("util/mostra-alerta.php");
 require_once("dataSource/conecta.php");
 require_once("questionarios/questionario/banco-questionario.php");
+
+// Só concede acesso a essa página para usuários com nível de acesso igual e 2 ou mais
+verificaUsuario(1);
 
 $todosSistemas = array();
 $todosSistemas = buscaTodosOsSistemasUtilizados($conexao);

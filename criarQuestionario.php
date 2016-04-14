@@ -1,16 +1,15 @@
 <?php 
-require_once("cabecalho.php");
-require_once("util/mostra-alerta.php");
-require_once("dataSource/conecta.php");
-require_once("tipoChamado/banco-tipoChamado.php");
-require_once("chamado/banco-chamado.php");
+	require_once("validaAcesso.php");
+	require_once("cabecalho.php");
+	require_once("util/mostra-alerta.php");
+	require_once("dataSource/conecta.php");
+	require_once("tipoChamado/banco-tipoChamado.php");
+	require_once("chamado/banco-chamado.php");
 
+	// Só concede acesso a essa página para usuários com nível de acesso igual e 2 ou mais
+	verificaUsuario(2);
 
-
-$tiposChamados = listaTipoChamados($conexao);
-
-
-
+	$tiposChamados = listaTipoChamados($conexao);
 ?>
 
 <script type="text/javascript">
@@ -108,7 +107,7 @@ $tiposChamados = listaTipoChamados($conexao);
 
 <style type="text/css">
 	.principal{
-		padding-left: 150px;
+		
 		align-items: center;
 	}
 
@@ -121,63 +120,65 @@ $tiposChamados = listaTipoChamados($conexao);
 
 </style>
 
-
-
-
-
 <form action="controller/criarQuestionarioCompleto/resultadoQuestionario.php" method="POST" >
-	
+	<div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+        	<div class="page-header text-left">
+				<h2>Criar Questionário</h2>
+			</div>
+			<table class="table" id="tableChamado">
+				<tr>
+					<td>Chamado:</td>			
+					<td><input class="form-control" type="number" name="numChamado" id="numChamado" onblur="verificaSeExisteChamado();" required></input></td>	
+				</tr>
+				<tr>
+					<td>Work Item:</td>			
+					<td><input class="form-control" type="number" name="workItem" id="workItem" required></input></td>	
+				</tr>
+				<tr>
+					<td>Tipo:</td>			
+					<td>
+						<select id="tipoChamadoId" name="tipoChamadoId">
+							<?php foreach ($tiposChamados as $tipo) :
+							
+							?>
+							<option value="<?=$tipo['idTipoChamado']?>">  <?=$tipo['nomeTipoChamado']?> </option>
+						<?php endforeach ?>
 
-	<table class="table" id="tableChamado">
-		<tr>
-			<td>Chamado:</td>			
-			<td><input class="form-control" type="number" name="numChamado" id="numChamado" onblur="verificaSeExisteChamado();" required></input></td>	
-		</tr>
-		<tr>
-			<td>Work Item:</td>			
-			<td><input class="form-control" type="number" name="workItem" id="workItem" required></input></td>	
-		</tr>
-		<tr>
-			<td>Tipo:</td>			
-			<td>
-				<select id="tipoChamadoId" name="tipoChamadoId">
-					<?php foreach ($tiposChamados as $tipo) :
-					
-					?>
-					<option value="<?=$tipo['idTipoChamado']?>">  <?=$tipo['nomeTipoChamado']?> </option>
-				<?php endforeach ?>
+						</select>
+					</td>	
+				</tr>
 
-			</select>
-		</td>	
-	</tr>
+				<tr>
+					<td>Descrição:</td>
+					<td>
+						<textarea name="descricao" class="form-control"></textarea>
+					</td>
+				</tr>
 
-	<tr>
-		<td>Descrição:</td>
-		<td>
-			<textarea name="descricao" class="form-control"></textarea>
-		</td>
-	</tr>
+				<tr>
+					<td>
 
-	<tr>
-		<td>
+					</td>	
+					<td>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<br/>
 
-		</td>	
-		<td>
-		</td>
-	</tr>
-</table>
+	<input type="hidden" name="testeAjax" id="testeAjax"  />
+	<input type="hidden" name="camposMarcados" id="camposMarcados"  />
+	<div style="position: relative;" align="center">
+		<?php  require_once("/controller/criarQuestionarioCompleto/tabelaItemSistema.php") ?>
 
-<input type="hidden" name="testeAjax" id="testeAjax"  />
-<input type="hidden" name="camposMarcados" id="camposMarcados"  />
-<div style="position: relative;" align="center">
-	<?php  require_once("/controller/criarQuestionarioCompleto/tabelaItemSistema.php") ?>
+		<button  type="button" onclick="montarFuncionario(); " class="btn btn-primary">Montar Questionario</button>
 
-	<button  type="button" onclick="montarFuncionario(); " class="btn btn-primary">Montar Questionario</button>
+		<br/><br/>
+		<?php  require_once("/controller/telaAbstract/tableQuestionarios.php") ?>
 
-	<br/><br/>
-	<?php  require_once("/controller/telaAbstract/tableQuestionarios.php") ?>
-
-</div>
-<button  type="submit" id="botaoSalvar" name="botaoSalvar" class="btn btn-primary" hidden="true" style="display:none">Salvar</button>
+	</div>
+	<button  type="submit" id="botaoSalvar" name="botaoSalvar" class="btn btn-primary" hidden="true" style="display:none">Salvar</button>
 </form>
 <?php require_once("rodape.php");?>

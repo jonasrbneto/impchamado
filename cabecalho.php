@@ -1,5 +1,19 @@
 <?php 
-require_once("util/mostra-alerta.php");
+	require_once("util/mostra-alerta.php");
+	require_once("validaAcesso.php");
+
+	$existeSessao = false;
+	if(isset($_SESSION['UsuarioNome'])){
+		$existeSessao = true;
+	}
+
+	$acessoUsuario = validaAcessoUsuario($existeSessao, 2);
+	$acessoAdmin = validaAcessoAdmin($existeSessao, 1);
+
+    $enderecoCompleto = explode("/",$_SERVER['PHP_SELF']);
+    $quebras = count($enderecoCompleto);
+    $endereco = $enderecoCompleto[$quebras-1];
+
 ?>
 <!DOCTYPE>
 <html>
@@ -32,23 +46,38 @@ require_once("util/mostra-alerta.php");
 		<div class="container" >
 			<ul class="nav navbar-nav" style="color:white;" >
 				<li class="nav-item active">
-					<a class="nav-link textoBranco" href="index.php">Home <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link textoBranco" href="criarQuestionario.php">Cadastrar <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item active">
 					<a class="nav-link textoBranco" href="buscaQuestionario.php">Busca Questionario <span class="sr-only">(current)</span></a>
 				</li>
-				<li class="nav-item active">
-					<a class="nav-link textoBranco" href=" alterarQuestionario.php">Alterar <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link textoBranco" href=" relatorioQuestionario.php">Relatorios <span class="sr-only">(current)</span></a>
-				</li>				
+
+				<?php
+				if ($existeSessao) { 
+					if ($acessoUsuario) {?>
+						<li class="nav-item active">
+							<a class="nav-link textoBranco" href="criarQuestionario.php">Cadastrar <span class="sr-only">(current)</span></a>
+						</li>
+						
+						<li class="nav-item active">
+							<a class="nav-link textoBranco" href=" alterarQuestionario.php">Alterar <span class="sr-only">(current)</span></a>
+						</li>
+					<?php 
+					}
+
+					if ($acessoAdmin) {?>
+						<li class="nav-item active">
+							<a class="nav-link textoBranco" href=" relatorioQuestionario.php">Relatorios <span class="sr-only">(current)</span></a>
+						</li>
+					<?php } 
+				} ?>				
 
 			</ul>
+			<?php
+			if ($existeSessao) { ?>
+				<div class="text-right">
+		            <a href="logout.php" class="btn btn-primary" role="button" style="margin-top: 8px;">Deslogar</a>
+		        </div>
+			<?php } ?>		
 		</div>
+
 	</nav>
 	<?php  ?>
 

@@ -5,6 +5,15 @@ require_once("dataSource/conecta.php");
 require_once("questionarios/questionario/banco-questionario.php");
 require_once("tipoSistema/banco-tiposistema.php");
 
+$existeSessao = false;
+if(isset($_SESSION['UsuarioNome'])){
+	$existeSessao = true;
+}
+
+$numChamado = "0";
+if (!empty($_GET["chamado"])){
+	$numChamado = $_GET["chamado"];
+}
 
 
 ?>
@@ -14,6 +23,13 @@ require_once("tipoSistema/banco-tiposistema.php");
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('input[type=checkbox]').attr('disabled', true);
+		console.log(<?php echo $numChamado ?>);
+		if(<?php echo $numChamado ?> != "0"){
+			console.log("entrou");
+			chamado = <?php echo $numChamado ?>;
+			$("#numChamado").val(chamado);
+			$("#botaoBuscar").click();
+		}
 	});
 
 
@@ -82,23 +98,37 @@ require_once("tipoSistema/banco-tiposistema.php");
 	.form-control{min-width:300px;}
 	
 </style>
+
+
+
+
 <form>
-	<div id="divBuscarQuest">
-		<table class="table">
-			<tr>
-				<td>Chamado:</td>			
-				<td><input class="form-control" type="number" name="numChamado" id="numChamado"  required></input></td>	
-			</tr>
+	<div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+        	<div class="page-header text-left">
+				<h2>Buscar Questionário</h2>
+			</div>
+			<div id="divBuscarQuest">
+				<table class="table">
+					<tr>
+						<td>Chamado:</td>			
+						<td><input class="form-control" type="number" name="numChamado" id="numChamado"  required></input></td>	
+					</tr>
+				</table>
 
-
-			<tr>
-				<td></td>
-				<td align="center"><input type="button" class="btn btn-primary" name="botaoBuscar" id="botaoBuscar"  onclick="ajaxChamado()" value="Buscar"></input></td>
-
-			</tr>
-
-		</table>
+				<div>
+					<?php
+						if (!$existeSessao) { ?>	
+				         	<a href="index.php" class="btn btn-primary" role="button">Voltar</a>
+				         	&nbsp;&nbsp;&nbsp;	
+					<?php } ?>	
+					
+					<input type="button" class="btn btn-primary" name="botaoBuscar" id="botaoBuscar"  onclick="ajaxChamado()" value="Buscar"></input>	
+				</div>
+			</div>
+		</div>
 	</div>
+	<br/>
 	<div style="position: relative;" align="center" id="questionarios">
 		<?php  require_once("/controller/criarQuestionarioCompleto/tabelaItemSistema.php") ?>
 		<br/><br/>
@@ -110,5 +140,6 @@ require_once("tipoSistema/banco-tiposistema.php");
 
 
 </form>
+
 
 <?php require_once("rodape.php");?>

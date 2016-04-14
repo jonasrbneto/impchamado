@@ -8,22 +8,26 @@ require_once("tipoSistema/banco-tiposistema.php");
 
 
 ?>
-<div style="width: 600px; height: 400px;" class="container text-center">
-	<form action="login.php" method="post">
-		<table class="table">
-			<tr>
-				<td>Login:</td>
-				<td><input class="form-control" name="email"></input></td>
-			</tr>
-			<tr>
-				<td>Senha:</td>
-				<td><input name="senha" class="form-control" type="password"></input></td>
-			</tr>
-			<tr>
-				<td><button type="submit" class="btn btn-primary">Login</input></td>
-				<td></td>
-			</tr>
-		</table>
-	</form>
+<div style="position: absolute; width: 100%; height: 200px; top: 50%; left: 0%; ">
+    <div style="position: relative; width: 50%; height: 200px; top: -100px; left:25%;">
+        <div class="container text-center" style="position: relative; width: 100%;">
+			<form action="validacao.php" method="post" class="form-inline" role="form" name="formLogin">
+				<fieldset>
+					<legend>Dados de Login</legend>
+					<div class="form-group">
+						<label for="txUsuario">Usu&aacute;rio:</label>
+						<input type="text" name="usuario" class="form-control" id="txUsuario" maxlength="25">
+					</div>
+					&nbsp;&nbsp;&nbsp;
+					<div class="form-group">
+						<label for="txSenha">Senha:</label>
+						<input type="password" name="senha" class="form-control" id="txSenha" maxlength="25">
+					</div>
+					<br/><br/>
+					<button type="submit" class="btn btn-primary">Entrar</button>
+				</fieldset>
+			</form>
+		</div>
+	</div>
 </div>
 <?php require_once("rodape.php");?>
