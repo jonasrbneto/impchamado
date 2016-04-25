@@ -1,0 +1,2701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b87bdcf7-72bc-42e6-9ea0-f7fda5dda68e" activeEnvironment="Default" name="CalculoSeguroWebService - Local" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="8b0726bb-51e5-4440-99e7-cfd2e56cf2a0" wsaVersion="NONE" name="CalculoSeguroWebPortBinding" type="wsdl" bindingName="{http://webservice.multicalculoauto.automovel.porto.com/}CalculoSeguroWebPortBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService.wsdl"><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService.wsdl</con:url><con:content><![CDATA[<definitions name="CalculoSeguroWebService" targetNamespace="http://webservice.multicalculoauto.automovel.porto.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webservice.multicalculoauto.automovel.porto.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.portoseguro.com.br/ebo/Veiculo/V1_2" schemaLocation="CalculoSeguroWebService_schema1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.portoseguro.com.br/ebo/QuestionarioOrcamento/V1_0" schemaLocation="CalculoSeguroWebService_schema2.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.portoseguro.com.br/ebo/Profissao/V1_0" schemaLocation="CalculoSeguroWebService_schema3.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.portoseguro.com.br/ebo/EnderecoOrcamento/V1_0" schemaLocation="CalculoSeguroWebService_schema4.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.portoseguro.com.br/ebo/Dispositivo/V1_0" schemaLocation="CalculoSeguroWebService_schema5.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.portoseguro.com.br/ebo/Common/V1_0" schemaLocation="CalculoSeguroWebService_schema6.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.portoseguro.com.br/ebo/CoberturaOrcamento/V1_0" schemaLocation="CalculoSeguroWebService_schema7.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://webservice.multicalculoauto.automovel.porto.com/" schemaLocation="CalculoSeguroWebService_schema8.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://webservice.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema9.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://solicitacao.client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema10.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://resultado.client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema11.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://common.multicalculoauto.calculo.auto.porto.com" schemaLocation="CalculoSeguroWebService_schema12.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://common.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema13.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema14.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="enviarProposta">
+    <part name="parameters" element="tns:enviarProposta"></part>
+  </message>
+  <message name="calcularOrcamento">
+    <part name="parameters" element="tns:calcularOrcamento"></part>
+  </message>
+  <message name="calcularEndossoCancelamento">
+    <part name="parameters" element="tns:calcularEndossoCancelamento"></part>
+  </message>
+  <message name="enviarPropostaResponse">
+    <part name="parameters" element="tns:enviarPropostaResponse"></part>
+  </message>
+  <message name="obterDesconto">
+    <part name="parameters" element="tns:obterDesconto"></part>
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception"></part>
+  </message>
+  <message name="obterDescontoResponse">
+    <part name="parameters" element="tns:obterDescontoResponse"></part>
+  </message>
+  <message name="calcularOrcamentoResponse">
+    <part name="parameters" element="tns:calcularOrcamentoResponse"></part>
+  </message>
+  <message name="calcularEndossoCancelamentoResponse">
+    <part name="parameters" element="tns:calcularEndossoCancelamentoResponse"></part>
+  </message>
+  <portType name="CalculoSeguroWeb">
+    <operation name="calcularOrcamento">
+      <input message="tns:calcularOrcamento"></input>
+      <output message="tns:calcularOrcamentoResponse"></output>
+    </operation>
+    <operation name="enviarProposta">
+      <input message="tns:enviarProposta"></input>
+      <output message="tns:enviarPropostaResponse"></output>
+    </operation>
+    <operation name="calcularEndossoCancelamento">
+      <input message="tns:calcularEndossoCancelamento"></input>
+      <output message="tns:calcularEndossoCancelamentoResponse"></output>
+      <fault name="Exception" message="tns:Exception"></fault>
+    </operation>
+    <operation name="obterDesconto">
+      <input message="tns:obterDesconto"></input>
+      <output message="tns:obterDescontoResponse"></output>
+    </operation>
+  </portType>
+  <binding name="CalculoSeguroWebPortBinding" type="tns:CalculoSeguroWeb">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="calcularOrcamento">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="enviarProposta">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="calcularEndossoCancelamento">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="obterDesconto">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CalculoSeguroWebService">
+    <port name="CalculoSeguroWebPort" binding="tns:CalculoSeguroWebPortBinding">
+      <soap:address location="http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema1.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://www.portoseguro.com.br/ebo/Veiculo/V1_2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.portoseguro.com.br/ebo/Veiculo/V1_2" xmlns:ns1="http://client.orcamento.multicalculoauto.automovel.porto.com">
+  <xs:import namespace="http://client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema14.xsd"/>
+  <xs:complexType name="veiculo">
+    <xs:sequence>
+      <xs:element name="codigoModelo" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="anoFabricacao" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="anoModelo" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="classeLocalizacao" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="categoriaTarifaria" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="chassi" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="placa" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="zeroKM" type="xs:boolean" form="qualified"/>
+      <xs:element name="vistoriaEspecial" type="xs:boolean" form="qualified"/>
+      <xs:element name="chassiRemarcado" type="xs:boolean" form="qualified"/>
+      <xs:element name="financiado" type="xs:boolean" form="qualified"/>
+      <xs:element name="isencaoImpostoDeficienteFisico" type="xs:boolean" form="qualified"/>
+      <xs:element name="kitGas" type="xs:boolean" form="qualified"/>
+      <xs:element name="blindagem" type="xs:boolean" form="qualified"/>
+      <xs:element name="quantidadePassageiros" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="valorNotaFiscal" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="tipoUso" type="ns1:tipoUsoVeiculoEnum" form="qualified" minOccurs="0"/>
+      <xs:element name="finalidadeUsoPJ" type="ns1:finalidadeUsoPJEnum" form="qualified" minOccurs="0"/>
+      <xs:element name="tipoIsencaoImposto" type="ns1:tipoIsencaoImpostoEnum" form="qualified" minOccurs="0"/>
+      <xs:element name="cadastro" type="tns:cadastroVeiculo" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cadastroVeiculo">
+    <xs:sequence>
+      <xs:element name="tipoCombustivel" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="quantidadePortas" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="quantidadePassageiros" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="quantidadeCilindrada" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="codigoMarca" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="peso" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="codigoTipo" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="codigoEspecie" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="codigoFamilia" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="codigoGrupoTarifario" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="codigoLinha" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="codigoGrupoLinha" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="codigoGrupo" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="codigoCor" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="cambioAutomatico" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="tabelaCotacao" type="ns1:tabelaCotacaoEnum" form="qualified" minOccurs="0"/>
+      <xs:element name="codigoTabelaFIPE" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="codigoTabelaMolicar" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="categoriaTarifariaOriginal" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="blindagemDeSerie" type="xs:boolean" form="qualified"/>
+      <xs:element name="aceitacaoSeguroNovo" type="xs:boolean" form="qualified"/>
+      <xs:element name="aceitacaoSeguroRenovacao" type="xs:boolean" form="qualified"/>
+      <xs:element name="aceitacaoSeguroEndosso" type="xs:boolean" form="qualified"/>
+      <xs:element name="valorMercado" type="xs:decimal" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema14.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://client.orcamento.multicalculoauto.automovel.porto.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="TipoPeriodoOrcamentoEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoOrcamentoEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+      <xs:enumeration value="9"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoPessoaEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="F"/>
+      <xs:enumeration value="J"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="sexoEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="M"/>
+      <xs:enumeration value="F"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="estadoCivilEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CASADO"/>
+      <xs:enumeration value="SOLTEIRO"/>
+      <xs:enumeration value="VIUVO"/>
+      <xs:enumeration value="DESQUITADO"/>
+      <xs:enumeration value="SEPARADO"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="faixaRendaMensalEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="99"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoIdentidadeEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoTelefoneEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="8"/>
+      <xs:enumeration value="10"/>
+      <xs:enumeration value="11"/>
+      <xs:enumeration value="996"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoRelacaoCorretorEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="planoConectaEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="segmentoItauEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="-2"/>
+      <xs:enumeration value="-1"/>
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+      <xs:enumeration value="8"/>
+      <xs:enumeration value="9"/>
+      <xs:enumeration value="10"/>
+      <xs:enumeration value="11"/>
+      <xs:enumeration value="12"/>
+      <xs:enumeration value="13"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="segmentoClientePortoEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="empresaEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="35"/>
+      <xs:enumeration value="84"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="identificadorItemEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="19"/>
+      <xs:enumeration value="27"/>
+      <xs:enumeration value="35"/>
+      <xs:enumeration value="43"/>
+      <xs:enumeration value="51"/>
+      <xs:enumeration value="60"/>
+      <xs:enumeration value="78"/>
+      <xs:enumeration value="86"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoOrigemBonusEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoContratacaoTGEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoConsultaAutoJovemEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="J"/>
+      <xs:enumeration value="E"/>
+      <xs:enumeration value="P"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoUsoVeiculoEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+      <xs:enumeration value="10"/>
+      <xs:enumeration value="11"/>
+      <xs:enumeration value="12"/>
+      <xs:enumeration value="13"/>
+      <xs:enumeration value="14"/>
+      <xs:enumeration value="15"/>
+      <xs:enumeration value="16"/>
+      <xs:enumeration value="17"/>
+      <xs:enumeration value="18"/>
+      <xs:enumeration value="19"/>
+      <xs:enumeration value="20"/>
+      <xs:enumeration value="21"/>
+      <xs:enumeration value="22"/>
+      <xs:enumeration value="25"/>
+      <xs:enumeration value="26"/>
+      <xs:enumeration value="28"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="finalidadeUsoPJEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoIsencaoImpostoEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tabelaCotacaoEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoCoberturaCascoEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoAlteracaoEndossoEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="categoriaAcessorioEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoRespostaEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="identificadorCoberturaCotacaoEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="classeRiscoREEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="danoMoralEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+      <xs:enumeration value="8"/>
+      <xs:enumeration value="9"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoIndenizacaoEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="segmentoItemAutomovelEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+      <xs:enumeration value="8"/>
+      <xs:enumeration value="9"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoClienteConectaEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="cartaoBandeiraEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoSegmentoPerfilEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoMensagemCotacaoEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoCriptografiaCotacaoEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoCriptografiaItemEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="consultaSerasaEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoBatenteEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+      <xs:enumeration value="8"/>
+      <xs:enumeration value="9"/>
+      <xs:enumeration value="10"/>
+      <xs:enumeration value="11"/>
+      <xs:enumeration value="12"/>
+      <xs:enumeration value="13"/>
+      <xs:enumeration value="14"/>
+      <xs:enumeration value="15"/>
+      <xs:enumeration value="16"/>
+      <xs:enumeration value="26"/>
+      <xs:enumeration value="29"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="statusCpfCondutorRecalculoEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoCoeficientePrecificacaoEnum">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="17"/>
+      <xs:enumeration value="18"/>
+      <xs:enumeration value="19"/>
+      <xs:enumeration value="20"/>
+      <xs:enumeration value="21"/>
+      <xs:enumeration value="22"/>
+      <xs:enumeration value="23"/>
+      <xs:enumeration value="24"/>
+      <xs:enumeration value="25"/>
+      <xs:enumeration value="27"/>
+      <xs:enumeration value="28"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema2.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://www.portoseguro.com.br/ebo/QuestionarioOrcamento/V1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.portoseguro.com.br/ebo/QuestionarioOrcamento/V1_0" xmlns:ns1="http://client.orcamento.multicalculoauto.automovel.porto.com">
+  <xs:import namespace="http://client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema14.xsd"/>
+  <xs:complexType name="questionario">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="questoes" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="questao" type="tns:questao" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="questao">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="respostas" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="resposta" type="tns:resposta" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resposta">
+    <xs:sequence>
+      <xs:element name="tipo" type="ns1:tipoRespostaEnum" form="qualified" minOccurs="0"/>
+      <xs:element name="valor" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="subResposta" type="tns:resposta" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema3.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://www.portoseguro.com.br/ebo/Profissao/V1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://client.orcamento.multicalculoauto.automovel.porto.com">
+  <xs:import namespace="http://client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema14.xsd"/>
+  <xs:complexType name="profissao">
+    <xs:sequence>
+      <xs:element name="atividadeProfissional" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="complementoAtividadeProfissional" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="faixaRendaMensal" type="ns1:faixaRendaMensalEnum" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema4.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://www.portoseguro.com.br/ebo/EnderecoOrcamento/V1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="endereco">
+    <xs:sequence>
+      <xs:element name="nomeLogradouro" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="numero" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="tipoLogradouro" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="complemento" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="cep" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="bairro" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="cidade" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="uf" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="classeLocalizacao" type="xs:int" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema5.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://www.portoseguro.com.br/ebo/Dispositivo/V1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="dispositivo">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="tipoEquipamento" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="tipoInstalacao" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="nomeResponsavelInstalacao" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="descricao" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="descricaoComplementar" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema6.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://www.portoseguro.com.br/ebo/Common/V1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://client.orcamento.multicalculoauto.automovel.porto.com">
+  <xs:import namespace="http://client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema14.xsd"/>
+  <xs:complexType name="identidade">
+    <xs:sequence>
+      <xs:element name="tipo" type="ns1:tipoIdentidadeEnum" form="qualified" minOccurs="0"/>
+      <xs:element name="numero" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="orgaoExpedidor" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="dataExpedicao" type="xs:dateTime" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="habilitacao">
+    <xs:sequence>
+      <xs:element name="numero" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="categoria" type="xs:string" form="qualified" minOccurs="0"/>
+      <xs:element name="dataExpedicao" type="xs:dateTime" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="telefone">
+    <xs:sequence>
+      <xs:element name="tipo" type="ns1:tipoTelefoneEnum" form="qualified" minOccurs="0"/>
+      <xs:element name="ddd" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="numero" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="ramal" type="xs:int" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema7.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://www.portoseguro.com.br/ebo/CoberturaOrcamento/V1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.portoseguro.com.br/ebo/CoberturaOrcamento/V1_0" xmlns:ns1="http://client.orcamento.multicalculoauto.automovel.porto.com" xmlns:ns2="http://solicitacao.client.orcamento.multicalculoauto.automovel.porto.com">
+  <xs:import namespace="http://client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema14.xsd"/>
+  <xs:import namespace="http://solicitacao.client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema10.xsd"/>
+  <xs:complexType name="cobertura">
+    <xs:sequence>
+      <xs:element name="codigo" type="ns1:identificadorCoberturaCotacaoEnum" form="qualified" minOccurs="0"/>
+      <xs:element name="produto" type="tns:produtoCobertura" form="qualified" minOccurs="0"/>
+      <xs:element name="app" type="tns:coberturaApp" form="qualified" minOccurs="0"/>
+      <xs:element name="danoCorporal" type="tns:coberturaDanoCorporal" form="qualified" minOccurs="0"/>
+      <xs:element name="danoMaterial" type="tns:coberturaDanoMaterial" form="qualified" minOccurs="0"/>
+      <xs:element name="danoMoral" type="ns1:danoMoralEnum" form="qualified" default="0" minOccurs="0"/>
+      <xs:element name="casco" type="tns:coberturaCasco" form="qualified" minOccurs="0"/>
+      <xs:element name="condicoesEspeciais" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="condicaoEspecial" type="tns:condicaoEspecialCobertura" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="criptografiasCondicoesEspeciais" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="criptografiaCondicaoEspecial" type="ns2:criptografiaCondicaoEspecialCobertura" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="acessorios" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="acessorio" type="tns:coberturaAcessorio" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="clausulas" form="qualified" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="clausula" type="tns:coberturaClausula" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="produtoCobertura">
+    <xs:sequence>
+      <xs:element name="seguroResidencial" type="tns:seguroResidencial" form="qualified" minOccurs="0"/>
+      <xs:element name="programaSemprePresente" type="ns2:programaSemprePresente" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="seguroResidencial">
+    <xs:sequence>
+      <xs:element name="contratado" type="xs:boolean" form="qualified"/>
+      <xs:element name="classeRisco" type="ns1:classeRiscoREEnum" form="qualified" minOccurs="0"/>
+      <xs:element name="planoSelecionado" type="xs:int" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="coberturaApp">
+    <xs:sequence>
+      <xs:element name="importanciaSegurada" type="xs:decimal" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="coberturaDanoCorporal">
+    <xs:sequence>
+      <xs:element name="importanciaSegurada" type="xs:decimal" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="coberturaDanoMaterial">
+    <xs:sequence>
+      <xs:element name="importanciaSegurada" type="xs:decimal" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="coberturaCasco">
+    <xs:sequence>
+      <xs:element name="importanciaSegurada" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="percentualImportanciaSegurada" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="fatorDepreciacao" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="franquia" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="codigoClasseFranquia" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="tipoIndenizacao" type="ns1:tipoIndenizacaoEnum" form="qualified" minOccurs="0"/>
+      <xs:element name="tipoCobertura" type="ns1:tipoCoberturaCascoEnum" form="qualified" minOccurs="0"/>
+      <xs:element name="blindagem" type="tns:coberturaBlindagem" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="coberturaBlindagem">
+    <xs:sequence>
+      <xs:element name="percentualImportanciaSegurada" type="xs:decimal" form="qualified" minOccurs="0"/>
+      <xs:element name="importanciaSegurada" type="xs:decimal" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="condicaoEspecialCobertura">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="coeficiente" type="xs:decimal" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="coberturaAcessorio">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="tipo" type="ns1:categoriaAcessorioEnum" form="qualified" minOccurs="0"/>
+      <xs:element name="sequencia" type="xs:int" form="qualified" minOccurs="0"/>
+      <xs:element name="importanciaSegurada" type="xs:decimal" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="coberturaClausula">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:string" form="qualified" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema10.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://solicitacao.client.orcamento.multicalculoauto.automovel.porto.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://www.portoseguro.com.br/ebo/Veiculo/V1_2" xmlns:ns6="http://www.portoseguro.com.br/ebo/QuestionarioOrcamento/V1_0" xmlns:ns7="http://www.portoseguro.com.br/ebo/CoberturaOrcamento/V1_0" xmlns:ns8="http://resultado.client.orcamento.multicalculoauto.automovel.porto.com" xmlns:tns="http://solicitacao.client.orcamento.multicalculoauto.automovel.porto.com" xmlns:ns1="http://client.orcamento.multicalculoauto.automovel.porto.com" xmlns:ns2="http://www.portoseguro.com.br/ebo/EnderecoOrcamento/V1_0" xmlns:ns3="http://www.portoseguro.com.br/ebo/Profissao/V1_0" xmlns:ns4="http://www.portoseguro.com.br/ebo/Common/V1_0">
+  <xs:import namespace="http://client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema14.xsd"/>
+  <xs:import namespace="http://www.portoseguro.com.br/ebo/EnderecoOrcamento/V1_0" schemaLocation="CalculoSeguroWebService_schema4.xsd"/>
+  <xs:import namespace="http://www.portoseguro.com.br/ebo/Profissao/V1_0" schemaLocation="CalculoSeguroWebService_schema3.xsd"/>
+  <xs:import namespace="http://www.portoseguro.com.br/ebo/Common/V1_0" schemaLocation="CalculoSeguroWebService_schema6.xsd"/>
+  <xs:import namespace="http://www.portoseguro.com.br/ebo/Veiculo/V1_2" schemaLocation="CalculoSeguroWebService_schema1.xsd"/>
+  <xs:import namespace="http://www.portoseguro.com.br/ebo/QuestionarioOrcamento/V1_0" schemaLocation="CalculoSeguroWebService_schema2.xsd"/>
+  <xs:import namespace="http://www.portoseguro.com.br/ebo/CoberturaOrcamento/V1_0" schemaLocation="CalculoSeguroWebService_schema7.xsd"/>
+  <xs:import namespace="http://resultado.client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema11.xsd"/>
+  <xs:element name="solicitacaoOrcamento" type="tns:solicitacaoOrcamento"/>
+  <xs:complexType name="solicitacaoOrcamento">
+    <xs:sequence>
+      <xs:element name="orcamentoProposto" type="tns:orcamentoProposto" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="orcamentoProposto">
+    <xs:sequence>
+      <xs:element name="codigoOperacao" type="xs:int" minOccurs="0"/>
+      <xs:element name="numeroTarifa" type="xs:int" minOccurs="0"/>
+      <xs:element name="tipoPeriodo" type="ns1:TipoPeriodoOrcamentoEnum" minOccurs="0"/>
+      <xs:element name="inicioVigencia" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="finalVigencia" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="dataMelhorVencimento" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="dataVersaoCalculo" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="quantidadeDiasMelhorVencimento" type="xs:string" minOccurs="0"/>
+      <xs:element name="identificadorOrcamento" type="xs:long" minOccurs="0"/>
+      <xs:element name="codigoCliente" type="xs:int" minOccurs="0"/>
+      <xs:element name="tipoOrcamento" type="ns1:tipoOrcamentoEnum" minOccurs="0"/>
+      <xs:element name="proponente" type="tns:proponente" minOccurs="0"/>
+      <xs:element name="empresas" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="empresa" type="ns1:empresaEnum" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="corretores" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="corretor" type="tns:corretor" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="itens" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="item" type="tns:itemProposto" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="orcamentoRetificador" type="tns:orcamentoRetificador" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="proponente">
+    <xs:sequence>
+      <xs:element name="cpfCnpj" type="xs:string" minOccurs="0"/>
+      <xs:element name="tipoPessoa" type="ns1:tipoPessoaEnum" minOccurs="0"/>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="dataNascimento" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="sexo" type="ns1:sexoEnum" minOccurs="0"/>
+      <xs:element name="estadoCivil" type="ns1:estadoCivilEnum" minOccurs="0"/>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="endereco" type="ns2:endereco" minOccurs="0"/>
+      <xs:element name="profissao" type="ns3:profissao" minOccurs="0"/>
+      <xs:element name="identidade" type="ns4:identidade" minOccurs="0"/>
+      <xs:element name="habilitacao" type="ns4:habilitacao" minOccurs="0"/>
+      <xs:element name="telefones" type="ns4:telefone" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="seguroCorretor" type="tns:seguroCorretor" minOccurs="0"/>
+      <xs:element name="produto" type="tns:produtoProponente" minOccurs="0"/>
+      <xs:element name="contaCorrente" type="tns:contaCorrente" minOccurs="0"/>
+      <xs:element name="segmento" type="ns1:segmentoClientePortoEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="seguroCorretor">
+    <xs:sequence>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="cpf" type="xs:string" minOccurs="0"/>
+      <xs:element name="tipoRelacao" type="ns1:tipoRelacaoCorretorEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="produtoProponente">
+    <xs:sequence>
+      <xs:element name="conecta" type="tns:conecta" minOccurs="0"/>
+      <xs:element name="vida" type="tns:vida" minOccurs="0"/>
+      <xs:element name="correntistaItau" type="tns:correntistaItau" minOccurs="0"/>
+      <xs:element name="individualTarget" type="tns:individualTarget" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="conecta">
+    <xs:sequence>
+      <xs:element name="plano" type="ns1:planoConectaEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="vida">
+    <xs:sequence>
+      <xs:element name="contratado" type="xs:boolean"/>
+      <xs:element name="nomeBeneficiario" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="correntistaItau">
+    <xs:sequence>
+      <xs:element name="solicitado" type="xs:boolean"/>
+      <xs:element name="segmento" type="ns1:segmentoItauEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="individualTarget">
+    <xs:sequence>
+      <xs:element name="individualTarget" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contaCorrente">
+    <xs:sequence>
+      <xs:element name="banco" type="xs:int" minOccurs="0"/>
+      <xs:element name="agencia" type="xs:int" minOccurs="0"/>
+      <xs:element name="digitoAgencia" type="xs:int" minOccurs="0"/>
+      <xs:element name="conta" type="xs:int" minOccurs="0"/>
+      <xs:element name="digitoConta" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="corretor">
+    <xs:sequence>
+      <xs:element name="susep" type="xs:string" minOccurs="0"/>
+      <xs:element name="sucursal" type="xs:int" minOccurs="0"/>
+      <xs:element name="percentualCorretagem" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="lider" type="xs:boolean"/>
+      <xs:element name="autenticacao" type="tns:autenticacaoCorretor" minOccurs="0"/>
+      <xs:element name="funcionarioItau" type="tns:funcionarioItau" minOccurs="0"/>
+      <xs:element name="programaRelacionamento" type="tns:programaRelacionamento" minOccurs="0"/>
+      <xs:element name="grupoEmpresa" type="tns:grupoEmpresa" minOccurs="0"/>
+      <xs:element name="cadastroCorretor" type="tns:cadastroCorretor" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="autenticacaoCorretor">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="funcionarioItau">
+    <xs:sequence>
+      <xs:element name="funcional" type="xs:string" minOccurs="0"/>
+      <xs:element name="agencia" type="xs:int" minOccurs="0"/>
+      <xs:element name="digitoAgencia" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="programaRelacionamento">
+    <xs:sequence>
+      <xs:element name="portoPlus" type="tns:portoPlus" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="portoPlus">
+    <xs:sequence>
+      <xs:element name="cpf" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="grupoEmpresa">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cadastroCorretor">
+    <xs:sequence>
+      <xs:element name="cpfCnpj" type="xs:string" minOccurs="0"/>
+      <xs:element name="tipoPessoa" type="ns1:tipoPessoaEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="itemProposto">
+    <xs:sequence>
+      <xs:element name="sequenciaItem" type="ns1:identificadorItemEnum" minOccurs="0"/>
+      <xs:element name="tipoOrigemBonus" type="ns1:tipoOrigemBonusEnum" minOccurs="0"/>
+      <xs:element name="classeBonus" type="xs:int" minOccurs="0"/>
+      <xs:element name="produto" type="tns:produtoItem" minOccurs="0"/>
+      <xs:element name="operacaoEmpresa" type="tns:operacaoEmpresa" minOccurs="0"/>
+      <xs:element name="contratoWorksite" type="tns:contratoWorksite" minOccurs="0"/>
+      <xs:element name="apolice" type="tns:apolice" minOccurs="0"/>
+      <xs:element name="veiculo" type="ns5:veiculo" minOccurs="0"/>
+      <xs:element name="questionario" type="ns6:questionario" minOccurs="0"/>
+      <xs:element name="coberturas" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="cobertura" type="ns7:cobertura" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="condutores" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="condutor" type="tns:condutor" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="segmento" type="ns1:segmentoItemAutomovelEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="produtoItem">
+    <xs:sequence>
+      <xs:element name="transitoMaisGentil" type="tns:transitoMaisGentil" minOccurs="0"/>
+      <xs:element name="autoJovem" type="tns:autoJovem" minOccurs="0"/>
+      <xs:element name="kmVantagensIpiranga" type="tns:kmVantagensIpiranga" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="transitoMaisGentil">
+    <xs:sequence>
+      <xs:element name="tipoContratacao" type="ns1:tipoContratacaoTGEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="autoJovem">
+    <xs:sequence>
+      <xs:element name="tipoConsulta" type="ns1:tipoConsultaAutoJovemEnum" minOccurs="0"/>
+      <xs:element name="cpfDescontoFamilia" type="xs:long" minOccurs="0"/>
+      <xs:element name="descontoOnline" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="kmVantagensIpiranga">
+    <xs:sequence>
+      <xs:element name="contratado" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="operacaoEmpresa">
+    <xs:sequence>
+      <xs:element name="empresa" type="tns:empresaPOE" minOccurs="0"/>
+      <xs:element name="funcionario" type="tns:funcionarioPOE" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="empresaPOE">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="telefoneRH" type="ns4:telefone" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="funcionarioPOE">
+    <xs:sequence>
+      <xs:element name="matricula" type="xs:string" minOccurs="0"/>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="telefone" type="ns4:telefone" minOccurs="0"/>
+      <xs:element name="tipoVinculo" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contratoWorksite">
+    <xs:sequence>
+      <xs:element name="numeroContrato" type="xs:int" minOccurs="0"/>
+      <xs:element name="numeroSubcontrato" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="apolice">
+    <xs:sequence>
+      <xs:element name="sucursal" type="xs:int" minOccurs="0"/>
+      <xs:element name="numero" type="xs:long" minOccurs="0"/>
+      <xs:element name="sequenciaItem" type="ns1:identificadorItemEnum" minOccurs="0"/>
+      <xs:element name="identificadorOrcamentoPorto" type="xs:long" minOccurs="0"/>
+      <xs:element name="identificadorItemOrcamentoPorto" type="xs:long" minOccurs="0"/>
+      <xs:element name="renovacao" type="tns:renovacao" minOccurs="0"/>
+      <xs:element name="endosso" type="tns:endosso" minOccurs="0"/>
+      <xs:element name="veiculo" type="ns5:veiculo" minOccurs="0"/>
+      <xs:element name="cobertura" type="tns:coberturaApolice" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="renovacao">
+    <xs:sequence>
+      <xs:element name="codigoIrb" type="xs:int" minOccurs="0"/>
+      <xs:element name="criptografia" type="xs:string" minOccurs="0"/>
+      <xs:element name="codigosSugestoes" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="codigoSugestao" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="renovacaoAutoJovem" type="xs:boolean"/>
+      <xs:element name="vidroAvariado" type="xs:boolean"/>
+      <xs:element name="retrovisorAvariado" type="xs:boolean"/>
+      <xs:element name="lanternaFarolAvariado" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="endosso">
+    <xs:sequence>
+      <xs:element name="premioPago" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="criptografia" type="xs:string" minOccurs="0"/>
+      <xs:element name="inicioVigencia" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="codigoTipoOrigem" type="xs:short" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="coberturaApolice">
+    <xs:sequence>
+      <xs:element name="casco" type="tns:cascoApolice" minOccurs="0"/>
+      <xs:element name="app" type="tns:appApolice" minOccurs="0"/>
+      <xs:element name="danoMaterial" type="tns:danoMaterialApolice" minOccurs="0"/>
+      <xs:element name="danoCorporal" type="tns:danoCorporalApolice" minOccurs="0"/>
+      <xs:element name="acessorios" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="acessorio" type="tns:acessorioApolice" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cascoApolice">
+    <xs:sequence>
+      <xs:element name="premioAnual" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="codigoCobertura" type="ns1:tipoCoberturaCascoEnum" minOccurs="0"/>
+      <xs:element name="tipoAlteracao" type="ns1:tipoAlteracaoEndossoEnum" minOccurs="0"/>
+      <xs:element name="blindagem" type="tns:blindagemApolice" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="blindagemApolice">
+    <xs:sequence>
+      <xs:element name="premioAnual" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="tipoAlteracao" type="ns1:tipoAlteracaoEndossoEnum" minOccurs="0"/>
+      <xs:element name="importanciaSegurada" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="appApolice">
+    <xs:sequence>
+      <xs:element name="premioAnual" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="tipoAlteracao" type="ns1:tipoAlteracaoEndossoEnum" minOccurs="0"/>
+      <xs:element name="importanciaSegurada" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="danoMaterialApolice">
+    <xs:sequence>
+      <xs:element name="premioAnual" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="tipoAlteracao" type="ns1:tipoAlteracaoEndossoEnum" minOccurs="0"/>
+      <xs:element name="importanciaSegurada" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="danoCorporalApolice">
+    <xs:sequence>
+      <xs:element name="premioAnual" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="tipoAlteracao" type="ns1:tipoAlteracaoEndossoEnum" minOccurs="0"/>
+      <xs:element name="importanciaSegurada" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="acessorioApolice">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="tipo" type="ns1:categoriaAcessorioEnum" minOccurs="0"/>
+      <xs:element name="sequencia" type="xs:int" minOccurs="0"/>
+      <xs:element name="premioAnual" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="tipoAlteracao" type="ns1:tipoAlteracaoEndossoEnum" minOccurs="0"/>
+      <xs:element name="importanciaSegurada" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="programaSemprePresente">
+    <xs:sequence>
+      <xs:element name="quantidadePontos" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="criptografiaCondicaoEspecialCobertura">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="criptografia" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="condutor">
+    <xs:sequence>
+      <xs:element name="sequencia" type="xs:int" minOccurs="0"/>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="cpf" type="xs:string" minOccurs="0"/>
+      <xs:element name="dataNascimento" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="principalCondutor" type="xs:boolean"/>
+      <xs:element name="cursoDirecaoEmocional" type="xs:boolean"/>
+      <xs:element name="cursoDirecaoSegura" type="xs:boolean"/>
+      <xs:element name="cursoDirecaoSeguraOnline" type="xs:boolean"/>
+      <xs:element name="profissao" type="ns3:profissao" minOccurs="0"/>
+      <xs:element name="habilitacao" type="ns4:habilitacao" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="orcamentoRetificador">
+    <xs:sequence>
+      <xs:element name="identificadorOrcamentoRetificador" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultadoOfetaCartoes">
+    <xs:sequence>
+      <xs:element name="cartaoBandeiraEnum" type="ns1:cartaoBandeiraEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultadoProdutoCotacao">
+    <xs:sequence>
+      <xs:element name="resultadoSeguroResidencial" type="tns:cotacaoSeguroResidencial" minOccurs="0"/>
+      <xs:element name="resultadoProgramaSemprePresente" type="tns:resultadoProgramaSemprePresente" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cotacaoSeguroResidencial">
+    <xs:sequence>
+      <xs:element name="descricaoPlano" type="xs:string" minOccurs="0"/>
+      <xs:element name="premioTotalAVista" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="formaPagamentos" type="ns8:formaPagamento" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cotacoes" type="tns:coberturaSeguroResidencial" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="mensagens" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="mensagem" type="ns8:mensagemCotacao" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="coberturaSeguroResidencial">
+    <xs:sequence>
+      <xs:element name="codigoCobertura" type="xs:int" minOccurs="0"/>
+      <xs:element name="descricaoCobertura" type="xs:string" minOccurs="0"/>
+      <xs:element name="valorLimiteMaximoIndenizacao" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="valorPremio" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultadoProgramaSemprePresente">
+    <xs:sequence>
+      <xs:element name="quantidadePontos" type="xs:int" minOccurs="0"/>
+      <xs:element name="valor" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultadoProdutoItem">
+    <xs:sequence>
+      <xs:element name="resultadoProdutoAutoJovem" type="tns:cotacaoProdutoAutoJovem" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cotacaoProdutoAutoJovem">
+    <xs:sequence>
+      <xs:element name="valorDescontoProgramaRelacionamento" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacaoComplementarProponente">
+    <xs:sequence>
+      <xs:element name="consultaSerasa" type="ns1:consultaSerasaEnum" minOccurs="0"/>
+      <xs:element name="pontuacaoSerasa" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacaoComplementarCondutor">
+    <xs:sequence>
+      <xs:element name="cpfAtivo" type="ns1:statusCpfCondutorRecalculoEnum" minOccurs="0"/>
+      <xs:element name="cpf" type="xs:string" minOccurs="0"/>
+      <xs:element name="consultaSerasa" type="ns1:consultaSerasaEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="coeficientePrecificacao">
+    <xs:sequence>
+      <xs:element name="empresa" type="ns1:empresaEnum" minOccurs="0"/>
+      <xs:element name="tipo" type="ns1:tipoCoeficientePrecificacaoEnum" minOccurs="0"/>
+      <xs:element name="coeficiente" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema11.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://resultado.client.orcamento.multicalculoauto.automovel.porto.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://resultado.client.orcamento.multicalculoauto.automovel.porto.com" xmlns:ns1="http://client.orcamento.multicalculoauto.automovel.porto.com" xmlns:ns2="http://solicitacao.client.orcamento.multicalculoauto.automovel.porto.com" xmlns:ns3="http://www.portoseguro.com.br/ebo/Dispositivo/V1_0">
+  <xs:import namespace="http://client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema14.xsd"/>
+  <xs:import namespace="http://solicitacao.client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema10.xsd"/>
+  <xs:import namespace="http://www.portoseguro.com.br/ebo/Dispositivo/V1_0" schemaLocation="CalculoSeguroWebService_schema5.xsd"/>
+  <xs:element name="resultadoOrcamento" type="tns:resultadoOrcamento"/>
+  <xs:complexType name="resultadoOrcamento">
+    <xs:sequence>
+      <xs:element name="orcamentoCotado" type="tns:orcamentoCotado" minOccurs="0"/>
+      <xs:element name="informacaoComplementar" type="tns:informacaoComplementar" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="orcamentoCotado">
+    <xs:sequence>
+      <xs:element name="identificadorOrcamento" type="xs:long" minOccurs="0"/>
+      <xs:element name="resultados" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="resultado" type="tns:orcamentoEmpresa" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="orcamentoEmpresa">
+    <xs:sequence>
+      <xs:element name="versaoTabelaPrecoVeiculo" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="dataValidade" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="dataVersaoCalculo" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="empresa" type="ns1:empresaEnum" minOccurs="0"/>
+      <xs:element name="identificadorOrcamentoEmpresa" type="xs:string" minOccurs="0"/>
+      <xs:element name="produtoProponente" type="tns:resultadoProdutoProponente" minOccurs="0"/>
+      <xs:element name="devolutivas" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="devolutiva" type="tns:devolutiva" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="itens" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="item" type="tns:itemCotado" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultadoProdutoProponente">
+    <xs:sequence>
+      <xs:element name="conecta" type="tns:resultadoConecta" minOccurs="0"/>
+      <xs:element name="correntistaItau" type="tns:resultadoCorrentistaItau" minOccurs="0"/>
+      <xs:element name="resultadoOfertaCartoes" type="ns2:resultadoOfetaCartoes" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultadoConecta">
+    <xs:sequence>
+      <xs:element name="tipoClienteConecta" type="ns1:tipoClienteConectaEnum" minOccurs="0"/>
+      <xs:element name="valorAprovado" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultadoCorrentistaItau">
+    <xs:sequence>
+      <xs:element name="segmento" type="ns1:segmentoItauEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="devolutiva">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="descricao" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="itemCotado">
+    <xs:sequence>
+      <xs:element name="sequenciaItem" type="ns1:identificadorItemEnum" minOccurs="0"/>
+      <xs:element name="identificadorItemOrcamento" type="xs:string" minOccurs="0"/>
+      <xs:element name="cotacoes" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="cotacao" type="tns:cotacao" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="dispositivos" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="dispositivo" type="ns3:dispositivo" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="devolutivas" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="devolutiva" type="tns:devolutiva" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="criptografias" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="criptografia" type="tns:criptografiaItem" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="restultadoProdutoItem" type="ns2:resultadoProdutoItem" minOccurs="0"/>
+      <xs:element name="segmentoItemAutomovelEnum" type="ns1:segmentoItemAutomovelEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cotacao">
+    <xs:sequence>
+      <xs:element name="codigo" type="ns1:identificadorCoberturaCotacaoEnum" minOccurs="0"/>
+      <xs:element name="identificadorCotacaoOrcamento" type="xs:string" minOccurs="0"/>
+      <xs:element name="valorPremioAVista" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="valorCustoApolice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="valorIOF" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="valorPremioLiquido" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="segmentoPerfil" type="ns1:tipoSegmentoPerfilEnum" minOccurs="0"/>
+      <xs:element name="casco" type="tns:cotacaoCasco" minOccurs="0"/>
+      <xs:element name="app" type="tns:cotacaoApp" minOccurs="0"/>
+      <xs:element name="danoMaterial" type="tns:cotacaoDanoMaterial" minOccurs="0"/>
+      <xs:element name="danoCorporal" type="tns:cotacaoDanoCorporal" minOccurs="0"/>
+      <xs:element name="acessorios" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="acessorio" type="tns:cotacaoAcessorio" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="clausulas" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="clausula" type="tns:cotacaoClausula" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="condicoesEspeciais" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="condicaoEspecial" type="tns:condicaoEspecialCotacao" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="avisos" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="aviso" type="tns:aviso" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="formasPagamentos" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="formaPagamento" type="tns:formaPagamento" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="beneficios" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="beneficio" type="tns:beneficio" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="mensagens" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="mensagem" type="tns:mensagemCotacao" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="descontosComerciais" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="descontoComercial" type="tns:descontoComercial" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="criptografias" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="criptografia" type="tns:criptografiaCotacao" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="resultadoProduto" type="ns2:resultadoProdutoCotacao" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cotacaoCasco">
+    <xs:sequence>
+      <xs:element name="premioLiquido" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="franquia" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="premioLiquidaSemDAF" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="blindagem" type="tns:cotacaoBlindagem" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cotacaoBlindagem">
+    <xs:sequence>
+      <xs:element name="premioLiquido" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cotacaoApp">
+    <xs:sequence>
+      <xs:element name="premioLiquido" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="importanciaSegurada" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cotacaoDanoMaterial">
+    <xs:sequence>
+      <xs:element name="premioLiquido" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="franquia" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="importanciaSegurada" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cotacaoDanoCorporal">
+    <xs:sequence>
+      <xs:element name="premioLiquido" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="franquia" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="importanciaSegurada" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cotacaoAcessorio">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="tipo" type="ns1:categoriaAcessorioEnum" minOccurs="0"/>
+      <xs:element name="sequenciaNumero" type="xs:int" minOccurs="0"/>
+      <xs:element name="premioLiquido" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="franquia" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="descricaoComplementoFranquia" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cotacaoClausula">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:string" minOccurs="0"/>
+      <xs:element name="premioLiquido" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="cobrancaPremio" type="xs:boolean"/>
+      <xs:element name="franquiaRetrovisor" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="franquiaFarolLanterna" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="franquiaFarolXenonio" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="franquiaLanternaLed" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="franquiaVidroLateral" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="franquia" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="condicaoEspecialCotacao">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="coeficiente" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="aviso">
+    <xs:sequence>
+      <xs:element name="tipo" type="xs:string" minOccurs="0"/>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="descricao" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="formaPagamento">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="primeiraParcela" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="juros" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="percentualJuros" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="quantidadeParcelas" type="xs:int" minOccurs="0"/>
+      <xs:element name="demaisParcelas" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="encargosFinanceiro" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="descricao" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="beneficio">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="descricao" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mensagemCotacao">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="descricao" type="xs:string" minOccurs="0"/>
+      <xs:element name="tipo" type="ns1:tipoMensagemCotacaoEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="descontoComercial">
+    <xs:sequence>
+      <xs:element name="percentualDisponivel" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="condicaoEspecial" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="criptografiaCotacao">
+    <xs:sequence>
+      <xs:element name="valor" type="xs:string" minOccurs="0"/>
+      <xs:element name="tipo" type="ns1:tipoCriptografiaCotacaoEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="criptografiaItem">
+    <xs:sequence>
+      <xs:element name="tipo" type="ns1:tipoCriptografiaItemEnum" minOccurs="0"/>
+      <xs:element name="valor" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacaoComplementar">
+    <xs:sequence>
+      <xs:element name="proponente" type="ns2:informacaoComplementarProponente" minOccurs="0"/>
+      <xs:element name="corretor" type="tns:InformacaoComplementarCorretor" minOccurs="0"/>
+      <xs:element name="informacaoEmissaoPropostaItau" type="tns:informacaoEmissaoPropostaItau" minOccurs="0"/>
+      <xs:element name="itens" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="item" type="tns:informacaoComplementarItem" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InformacaoComplementarCorretor">
+    <xs:sequence>
+      <xs:element name="comissoesAzul" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="comissaoAzul" type="tns:ComissaoAzul" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComissaoAzul">
+    <xs:sequence>
+      <xs:element name="identificadorCotacao" type="ns1:identificadorCoberturaCotacaoEnum" minOccurs="0"/>
+      <xs:element name="percentualComissao" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacaoEmissaoPropostaItau">
+    <xs:sequence>
+      <xs:element name="identificadorSeguradoraItau" type="xs:long" minOccurs="0"/>
+      <xs:element name="inicioVigenciaItau" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="finalVigenciaItau" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="informacoesItemEmissaoPropostaItau" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="informacaoItemEmissaoPropostaItau" type="tns:informacaoItemEmissaoPropostaItau" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacaoItemEmissaoPropostaItau">
+    <xs:sequence>
+      <xs:element name="sequenciaItem" type="ns1:identificadorItemEnum" minOccurs="0"/>
+      <xs:element name="codigoVeiculoItau" type="xs:string" minOccurs="0"/>
+      <xs:element name="batenteAplicadoItau" type="xs:boolean"/>
+      <xs:element name="informacoesCotacaoEmissaoPropostaItau" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="informacaoCotacaoEmissaoPropostaItau" type="tns:informacaoCotacaoEmissaoPropostaItau" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacaoCotacaoEmissaoPropostaItau">
+    <xs:sequence>
+      <xs:element name="identificadorCotacao" type="ns1:identificadorCoberturaCotacaoEnum" minOccurs="0"/>
+      <xs:element name="processoSusep" type="xs:string" minOccurs="0"/>
+      <xs:element name="descricaoPlano" type="xs:string" minOccurs="0"/>
+      <xs:element name="descricaoProduto" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacaoComplementarItem">
+    <xs:sequence>
+      <xs:element name="sequenciaItem" type="ns1:identificadorItemEnum" minOccurs="0"/>
+      <xs:element name="veiculoRestrito" type="xs:boolean"/>
+      <xs:element name="situacaoAutoJovem" type="tns:situacaoAutoJovem" minOccurs="0"/>
+      <xs:element name="perfilElegivel" type="xs:int" minOccurs="0"/>
+      <xs:element name="batentes" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="batente" type="tns:informacaoComplementarBatente" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="condutores" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="condutor" type="ns2:informacaoComplementarCondutor" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="coeficientesPrecificacao" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="coeficientePrecificacao" type="ns2:coeficientePrecificacao" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="situacaoAutoJovem">
+    <xs:sequence>
+      <xs:element name="cursoDirecaoEmocional" type="xs:boolean"/>
+      <xs:element name="cursoDirecaoSegura" type="xs:boolean"/>
+      <xs:element name="cursoDirecaoSeguraOnline" type="xs:boolean"/>
+      <xs:element name="contingencia" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacaoComplementarBatente">
+    <xs:sequence>
+      <xs:element name="codigoCotacao" type="ns1:identificadorCoberturaCotacaoEnum" minOccurs="0"/>
+      <xs:element name="tipo" type="ns1:tipoBatenteEnum" minOccurs="0"/>
+      <xs:element name="valor" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="empresa" type="ns1:empresaEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema8.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://webservice.multicalculoauto.automovel.porto.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://resultado.client.orcamento.multicalculoauto.automovel.porto.com" xmlns:tns="http://webservice.multicalculoauto.automovel.porto.com/" xmlns:ns1="http://webservice.multicalculoauto.automovel.porto.com" xmlns:ns2="http://common.multicalculoauto.automovel.porto.com" xmlns:ns3="http://common.multicalculoauto.calculo.auto.porto.com" xmlns:ns4="http://solicitacao.client.orcamento.multicalculoauto.automovel.porto.com">
+  <xs:import namespace="http://webservice.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema9.xsd"/>
+  <xs:import namespace="http://common.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema13.xsd"/>
+  <xs:import namespace="http://common.multicalculoauto.calculo.auto.porto.com" schemaLocation="CalculoSeguroWebService_schema12.xsd"/>
+  <xs:import namespace="http://solicitacao.client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema10.xsd"/>
+  <xs:import namespace="http://resultado.client.orcamento.multicalculoauto.automovel.porto.com" schemaLocation="CalculoSeguroWebService_schema11.xsd"/>
+  <xs:element name="Exception" type="tns:Exception"/>
+  <xs:element name="calcularEndossoCancelamento" type="tns:calcularEndossoCancelamento"/>
+  <xs:element name="calcularEndossoCancelamentoResponse" type="tns:calcularEndossoCancelamentoResponse"/>
+  <xs:element name="calcularOrcamento" type="tns:calcularOrcamento"/>
+  <xs:element name="calcularOrcamentoResponse" type="tns:calcularOrcamentoResponse"/>
+  <xs:element name="enviarProposta" type="tns:enviarProposta"/>
+  <xs:element name="enviarPropostaResponse" type="tns:enviarPropostaResponse"/>
+  <xs:element name="obterDesconto" type="tns:obterDesconto"/>
+  <xs:element name="obterDescontoResponse" type="tns:obterDescontoResponse"/>
+  <xs:complexType name="obterDesconto">
+    <xs:sequence>
+      <xs:element name="descontosFlexiveis" type="tns:descontoFlexivel" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="descontoFlexivel">
+    <xs:sequence>
+      <xs:element name="descontoEspecial" type="tns:descontoEspecial" minOccurs="0"/>
+      <xs:element name="devolutivas" type="tns:devolutiva" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="errosSistema" type="tns:erroSistema" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="formasPagamento" type="tns:formaPagamento" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="garantiasDesconto" type="tns:garantia" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="identificador" type="xs:long" minOccurs="0"/>
+      <xs:element name="numeroItau" type="xs:int" minOccurs="0"/>
+      <xs:element name="numeroOrcamentoCliente" type="xs:long" minOccurs="0"/>
+      <xs:element name="recorrenciaOnline" type="tns:recorrenciaOnline" minOccurs="0"/>
+      <xs:element name="servicosDesconto" type="tns:servico" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="situacaoProcessamento" type="xs:int" minOccurs="0"/>
+      <xs:element name="tipoDesconto" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="descontoEspecial">
+    <xs:sequence>
+      <xs:element name="valor" type="xs:float" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="devolutiva">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="descricao" type="xs:string" minOccurs="0"/>
+      <xs:element name="mensagem" type="xs:string" minOccurs="0"/>
+      <xs:element name="tipo" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="erroSistema">
+    <xs:sequence>
+      <xs:element name="descricao" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="formaPagamento">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="descricao" type="xs:string" minOccurs="0"/>
+      <xs:element name="parcelamentos" type="tns:parcelamento" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="parcelamento">
+    <xs:sequence>
+      <xs:element name="descricao" type="xs:string" minOccurs="0"/>
+      <xs:element name="percentualJurosMes" type="xs:double" minOccurs="0"/>
+      <xs:element name="quantidadeParcela" type="xs:int" minOccurs="0"/>
+      <xs:element name="valorDemaisParcelas" type="xs:double" minOccurs="0"/>
+      <xs:element name="valorJuros" type="xs:double" minOccurs="0"/>
+      <xs:element name="valorPrimeiraParcela" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="garantia">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int" minOccurs="0"/>
+      <xs:element name="descricao" type="xs:string" minOccurs="0"/>
+      <xs:element name="descricaoValorSegurado" type="xs:string" minOccurs="0"/>
+      <xs:element name="enquadrada" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="franquia" type="tns:franquia" minOccurs="0"/>
+      <xs:element name="itabttmax" type="xs:double" minOccurs="0"/>
+      <xs:element name="itabttmin" type="xs:double" minOccurs="0"/>
+      <xs:element name="percentual" type="xs:float" minOccurs="0"/>
+      <xs:element name="premio" type="xs:float" minOccurs="0"/>
+      <xs:element name="valorSegurado" type="xs:float" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="franquia">
+    <xs:sequence>
+      <xs:element name="codigoClasse" type="xs:int" minOccurs="0"/>
+      <xs:element name="complemento" type="xs:string" minOccurs="0"/>
+      <xs:element name="descricaoClasse" type="xs:string" minOccurs="0"/>
+      <xs:element name="tipoValor" type="xs:string" minOccurs="0"/>
+      <xs:element name="valor" type="xs:float" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recorrenciaOnline">
+    <xs:sequence>
+      <xs:element name="chassi" type="xs:string" minOccurs="0"/>
+      <xs:element name="placa" type="xs:string" minOccurs="0"/>
+      <xs:element name="premioDesejado" type="xs:float" minOccurs="0"/>
+      <xs:element name="premioOriginal" type="xs:float" minOccurs="0"/>
+      <xs:element name="premioRecorrencia" type="xs:float" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="servico">
+    <xs:sequence>
+      <xs:element name="codigoServico" type="xs:int" minOccurs="0"/>
+      <xs:element name="descricaoServico" type="xs:string" minOccurs="0"/>
+      <xs:element name="descricaoTipoServico" type="xs:string" minOccurs="0"/>
+      <xs:element name="premio" type="xs:float" minOccurs="0"/>
+      <xs:element name="textoTipoServico" type="xs:string" minOccurs="0"/>
+      <xs:element name="tipoServico" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obterDescontoResponse">
+    <xs:sequence>
+      <xs:element name="descontosFlexiveis" type="tns:descontoFlexivel" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="calcularEndossoCancelamento">
+    <xs:sequence>
+      <xs:element name="cancelamentoVO" type="ns1:CancelamentoVO" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ItemCanceladoVO">
+    <xs:sequence>
+      <xs:element name="numeroItem" type="xs:int" minOccurs="0"/>
+      <xs:element name="inicioVigencia" type="xs:dateTime" nillable="true" minOccurs="0"/>
+      <xs:element name="finalVigencia" type="xs:dateTime" nillable="true" minOccurs="0"/>
+      <xs:element name="premiosAnuais" type="ns2:PremioCoberturasVO" nillable="true" minOccurs="0"/>
+      <xs:element name="incluidoAtravesEndosso" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="calcularEndossoCancelamentoResponse">
+    <xs:sequence>
+      <xs:element name="protocolos" type="ns3:RetornoCancelamentoVO" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="retornoItemCanceladoVO">
+    <xs:sequence>
+      <xs:element name="mensagem" type="xs:string" minOccurs="0"/>
+      <xs:element name="numeroItem" type="xs:short" minOccurs="0"/>
+      <xs:element name="premiosDevolvidos" type="ns2:PremioCoberturasVO" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="calcularOrcamento">
+    <xs:sequence>
+      <xs:element ref="ns4:solicitacaoOrcamento" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="calcularOrcamentoResponse">
+    <xs:sequence>
+      <xs:element ref="ns5:resultadoOrcamento" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enviarProposta">
+    <xs:sequence>
+      <xs:element name="xmlProposta" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enviarPropostaResponse">
+    <xs:sequence>
+      <xs:element name="protocolos" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema9.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://webservice.multicalculoauto.automovel.porto.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://webservice.multicalculoauto.automovel.porto.com/">
+  <xs:import namespace="http://webservice.multicalculoauto.automovel.porto.com/" schemaLocation="CalculoSeguroWebService_schema8.xsd"/>
+  <xs:complexType name="CancelamentoVO">
+    <xs:sequence>
+      <xs:element name="sucursal" type="xs:short" nillable="true"/>
+      <xs:element name="apolice" type="xs:long" nillable="true"/>
+      <xs:element name="tipoCalculo" type="xs:short" nillable="true"/>
+      <xs:element name="tipoEndosso" type="xs:short" nillable="true"/>
+      <xs:element name="tipoSeguro" type="xs:int" nillable="true"/>
+      <xs:element name="numeroPortoPrint" type="xs:long" nillable="true"/>
+      <xs:element name="versaoDLLCalculo" type="xs:string" nillable="true"/>
+      <xs:element name="inicioVigenciaEndosso" type="xs:dateTime" nillable="true"/>
+      <xs:element name="dataCalculo" type="xs:dateTime" nillable="true"/>
+      <xs:element name="numeroTarifa" type="xs:int" nillable="true"/>
+      <xs:element name="susep" type="xs:string" nillable="true"/>
+      <xs:element name="quantidadeTransmissao" type="xs:int" nillable="true"/>
+      <xs:element name="itens" type="ns1:ItemCanceladoVO" nillable="true" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema13.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://common.multicalculoauto.automovel.porto.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PremioCoberturasVO">
+    <xs:sequence>
+      <xs:element name="valorApp" type="xs:double" nillable="true"/>
+      <xs:element name="valorAcessorios" type="xs:double" nillable="true"/>
+      <xs:element name="valorCasco" type="xs:double" nillable="true"/>
+      <xs:element name="valorDanoMaterial" type="xs:double" nillable="true"/>
+      <xs:element name="valorDanoPessoal" type="xs:double" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService/CalculoSeguroWebService_schema12.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://common.multicalculoauto.calculo.auto.porto.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://webservice.multicalculoauto.automovel.porto.com/">
+  <xs:import namespace="http://webservice.multicalculoauto.automovel.porto.com/" schemaLocation="CalculoSeguroWebService_schema8.xsd"/>
+  <xs:complexType name="RetornoCancelamentoVO">
+    <xs:sequence>
+      <xs:element name="itens">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="itens" type="ns1:retornoItemCanceladoVO" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService</con:endpoint></con:endpoints><con:operation id="7267d194-b897-41ac-8534-11f16730cd38" isOneWay="false" action="" name="calcularEndossoCancelamento" bindingOperationName="calcularEndossoCancelamento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b03cf415-703e-42b4-a011-54a57d801ede" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.multicalculoauto.automovel.porto.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:calcularEndossoCancelamento>\r
+         <!--Optional:-->\r
+         <cancelamentoVO>\r
+            <sucursal>?</sucursal>\r
+            <apolice>?</apolice>\r
+            <tipoCalculo>?</tipoCalculo>\r
+            <tipoEndosso>?</tipoEndosso>\r
+            <tipoSeguro>?</tipoSeguro>\r
+            <numeroPortoPrint>?</numeroPortoPrint>\r
+            <versaoDLLCalculo>?</versaoDLLCalculo>\r
+            <inicioVigenciaEndosso>?</inicioVigenciaEndosso>\r
+            <dataCalculo>?</dataCalculo>\r
+            <numeroTarifa>?</numeroTarifa>\r
+            <susep>?</susep>\r
+            <quantidadeTransmissao>?</quantidadeTransmissao>\r
+            <!--1 or more repetitions:-->\r
+            <itens>\r
+               <!--Optional:-->\r
+               <numeroItem>?</numeroItem>\r
+               <!--Optional:-->\r
+               <inicioVigencia>?</inicioVigencia>\r
+               <!--Optional:-->\r
+               <finalVigencia>?</finalVigencia>\r
+               <!--Optional:-->\r
+               <premiosAnuais>\r
+                  <valorApp>?</valorApp>\r
+                  <valorAcessorios>?</valorAcessorios>\r
+                  <valorCasco>?</valorCasco>\r
+                  <valorDanoMaterial>?</valorDanoMaterial>\r
+                  <valorDanoPessoal>?</valorDanoPessoal>\r
+               </premiosAnuais>\r
+               <incluidoAtravesEndosso>?</incluidoAtravesEndosso>\r
+            </itens>\r
+         </cancelamentoVO>\r
+      </web:calcularEndossoCancelamento>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.multicalculoauto.automovel.porto.com/CalculoSeguroWeb/calcularEndossoCancelamentoRequest"/></con:call></con:operation><con:operation id="99cb52c3-5233-4695-9657-2e2974d1244a" isOneWay="false" action="" name="calcularOrcamento" bindingOperationName="calcularOrcamento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2ccb0ff8-d03f-4b2b-b1c6-710c503ba12a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.multicalculoauto.automovel.porto.com/" xmlns:sol="http://solicitacao.client.orcamento.multicalculoauto.automovel.porto.com" xmlns:v1="http://www.portoseguro.com.br/ebo/EnderecoOrcamento/V1_0" xmlns:v11="http://www.portoseguro.com.br/ebo/Profissao/V1_0" xmlns:v12="http://www.portoseguro.com.br/ebo/Common/V1_0" xmlns:v13="http://www.portoseguro.com.br/ebo/Veiculo/V1_2" xmlns:v14="http://www.portoseguro.com.br/ebo/QuestionarioOrcamento/V1_0" xmlns:v15="http://www.portoseguro.com.br/ebo/CoberturaOrcamento/V1_0">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:calcularOrcamento>\r
+         <!--Optional:-->\r
+        <solicitacaoOrcamento xmlns="http://solicitacao.client.orcamento.multicalculoauto.automovel.porto.com" xmlns:ns2="http://www.portoseguro.com.br/ebo/EnderecoOrcamento/V1_0" xmlns:ns3="http://www.portoseguro.com.br/ebo/Profissao/V1_0" xmlns:ns4="http://www.portoseguro.com.br/ebo/Common/V1_0" xmlns:ns5="http://www.portoseguro.com.br/ebo/Veiculo/V1_2" xmlns:ns6="http://www.portoseguro.com.br/ebo/QuestionarioOrcamento/V1_0" xmlns:ns7="http://www.portoseguro.com.br/ebo/CoberturaOrcamento/V1_0">
+    <orcamentoProposto>
+        <codigoOperacao>0</codigoOperacao>
+        <numeroTarifa>193</numeroTarifa>
+        <tipoPeriodo>1</tipoPeriodo>
+        <inicioVigencia>18/02/2016</inicioVigencia>
+        <finalVigencia>18/02/2017</finalVigencia>
+        <dataMelhorVencimento>18/02/2016</dataMelhorVencimento>
+        <dataVersaoCalculo>29/02/2016</dataVersaoCalculo>
+        <quantidadeDiasMelhorVencimento></quantidadeDiasMelhorVencimento>
+        <identificadorOrcamento>1007370292</identificadorOrcamento>
+        <codigoCliente>0</codigoCliente>
+        <tipoOrcamento>0</tipoOrcamento>
+        <proponente>
+            <cpfCnpj>80492745358</cpfCnpj>
+            <tipoPessoa>F</tipoPessoa>
+            <nome>TESTE ORIGEM BONUS</nome>
+            <dataNascimento>10/10/1980</dataNascimento>
+            <sexo>M</sexo>
+            <endereco>
+                <ns2:nomeLogradouro>SAO BENTO</ns2:nomeLogradouro>
+                <ns2:tipoLogradouro>R</ns2:tipoLogradouro>
+                <ns2:cep>01010000</ns2:cep>
+                <ns2:bairro>CENTRO</ns2:bairro>
+                <ns2:cidade>SAO PAULO </ns2:cidade>
+                <ns2:uf>SP</ns2:uf>
+                <ns2:classeLocalizacao>11</ns2:classeLocalizacao>
+            </endereco>
+            <profissao/>
+            <produto>
+                <conecta>
+                    <plano>3</plano>
+                </conecta>
+                <correntistaItau>
+                    <solicitado>false</solicitado>
+                </correntistaItau>
+                <individualTarget>
+                    <individualTarget>false</individualTarget>
+                </individualTarget>
+            </produto>
+        </proponente>
+        <empresas>
+            <empresa>35</empresa>
+            <empresa>84</empresa>
+            <empresa>1</empresa>
+        </empresas>
+        <corretores>
+            <corretor>
+                <susep>S5005J</susep>
+                <sucursal>56</sucursal>
+                <percentualCorretagem>100</percentualCorretagem>
+                <lider>true</lider>
+                <programaRelacionamento/>
+                <grupoEmpresa/>
+                <cadastroCorretor>
+                    <cpfCnpj>054930292000190</cpfCnpj>
+                    <tipoPessoa>J</tipoPessoa>
+                </cadastroCorretor>
+            </corretor>
+        </corretores>
+        <itens>
+            <item>
+                <sequenciaItem>27</sequenciaItem>
+                <classeBonus>5</classeBonus>
+				<TipoReaproveitamentoBonus>2</TipoReaproveitamentoBonus>
+                <produto>
+                    <transitoMaisGentil>
+                        <tipoContratacao>2</tipoContratacao>
+                    </transitoMaisGentil>
+                    <kmVantagensIpiranga>
+                        <contratado>false</contratado>
+                    </kmVantagensIpiranga>
+                </produto>
+                <apolice>
+                    <identificadorOrcamentoPorto>151417145</identificadorOrcamentoPorto>
+                    <identificadorItemOrcamentoPorto>151264541</identificadorItemOrcamentoPorto>
+                    <cobertura>
+                        <casco>
+                            <blindagem/>
+                        </casco>
+                        <app/>
+                        <danoMaterial/>
+                        <danoCorporal/>
+                        <acessorios>
+                            <acessorio/>
+                        </acessorios>
+                    </cobertura>
+                    <alteracaoDadoRelevante>false</alteracaoDadoRelevante>
+                </apolice>
+                <veiculo>
+                    <ns5:codigoModelo>82907</ns5:codigoModelo>
+                    <ns5:anoFabricacao>2014</ns5:anoFabricacao>
+                    <ns5:anoModelo>2014</ns5:anoModelo>
+                    <ns5:classeLocalizacao>13</ns5:classeLocalizacao>
+                    <ns5:categoriaTarifaria>22</ns5:categoriaTarifaria>
+                    <ns5:zeroKM>false</ns5:zeroKM>
+                    <ns5:vistoriaEspecial>false</ns5:vistoriaEspecial>
+                    <ns5:chassiRemarcado>false</ns5:chassiRemarcado>
+                    <ns5:financiado>false</ns5:financiado>
+                    <ns5:isencaoImpostoDeficienteFisico>false</ns5:isencaoImpostoDeficienteFisico>
+                    <ns5:kitGas>false</ns5:kitGas>
+                    <ns5:blindagem>false</ns5:blindagem>
+                    <ns5:quantidadePassageiros>5</ns5:quantidadePassageiros>
+                    <ns5:tipoUso>1</ns5:tipoUso>
+                    <ns5:tipoIsencaoImposto>0</ns5:tipoIsencaoImposto>
+                    <ns5:cadastro>
+                        <ns5:tipoCombustivel>2</ns5:tipoCombustivel>
+                        <ns5:quantidadePortas>5</ns5:quantidadePortas>
+                        <ns5:quantidadePassageiros>5</ns5:quantidadePassageiros>
+                        <ns5:quantidadeCilindrada>2000</ns5:quantidadeCilindrada>
+                        <ns5:codigoMarca>65</ns5:codigoMarca>
+                        <ns5:peso>2190</ns5:peso>
+                        <ns5:codigoTipo>30</ns5:codigoTipo>
+                        <ns5:codigoEspecie>2</ns5:codigoEspecie>
+                        <ns5:codigoFamilia>8</ns5:codigoFamilia>
+                        <ns5:codigoGrupoTarifario>32</ns5:codigoGrupoTarifario>
+                        <ns5:codigoLinha>1901</ns5:codigoLinha>
+                        <ns5:codigoGrupoLinha>95</ns5:codigoGrupoLinha>
+                        <ns5:codigoGrupo>908</ns5:codigoGrupo>
+                        <ns5:cambioAutomatico>1</ns5:cambioAutomatico>
+                        <ns5:tabelaCotacao>2</ns5:tabelaCotacao>
+                        <ns5:codigoTabelaFIPE>150630</ns5:codigoTabelaFIPE>
+                        <ns5:codigoTabelaMolicar>2102311</ns5:codigoTabelaMolicar>
+                        <ns5:categoriaTarifariaOriginal>22</ns5:categoriaTarifariaOriginal>
+                        <ns5:blindagemDeSerie>false</ns5:blindagemDeSerie>
+                        <ns5:aceitacaoSeguroNovo>true</ns5:aceitacaoSeguroNovo>
+                        <ns5:aceitacaoSeguroRenovacao>true</ns5:aceitacaoSeguroRenovacao>
+                        <ns5:aceitacaoSeguroEndosso>true</ns5:aceitacaoSeguroEndosso>
+                        <ns5:valorMercado>52396</ns5:valorMercado>
+                    </ns5:cadastro>
+                </veiculo>
+                <questionario>
+                    <ns6:codigo>81</ns6:codigo>
+                    <ns6:questoes>
+                        <ns6:questao>
+                            <ns6:codigo>121</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>1</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>124</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>10</ns6:valor>
+                                </ns6:resposta>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>9</ns6:valor>
+                                </ns6:resposta>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>2</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>127</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>17</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>151</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>17</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>120</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>1</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>157</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>2</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>126</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>2</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>155</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>1</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>118</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>1</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>156</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>1</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>125</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>1</ns6:tipo>
+                                    <ns6:valor>01010000</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>19</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>1</ns6:tipo>
+                                    <ns6:valor>TESTE ORIGEM BONUS</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>20</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>1</ns6:tipo>
+                                    <ns6:valor>80492745358</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>2</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>0</ns6:tipo>
+                                    <ns6:valor>10/10/1980</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                    </ns6:questoes>
+                </questionario>
+                <coberturas>
+                    <cobertura>
+                        <ns7:codigo>1</ns7:codigo>
+                        <ns7:produto/>
+                        <ns7:app>
+                            <ns7:importanciaSegurada>50000</ns7:importanciaSegurada>
+                        </ns7:app>
+                        <ns7:danoCorporal>
+                            <ns7:importanciaSegurada>100000</ns7:importanciaSegurada>
+                        </ns7:danoCorporal>
+                        <ns7:danoMaterial>
+                            <ns7:importanciaSegurada>100000</ns7:importanciaSegurada>
+                        </ns7:danoMaterial>
+                        <ns7:casco>
+                            <ns7:importanciaSegurada>52396</ns7:importanciaSegurada>
+                            <ns7:percentualImportanciaSegurada>1</ns7:percentualImportanciaSegurada>
+                            <ns7:fatorDepreciacao>1</ns7:fatorDepreciacao>
+                            <ns7:franquia>3026</ns7:franquia>
+                            <ns7:codigoClasseFranquia>1</ns7:codigoClasseFranquia>
+                            <ns7:tipoIndenizacao>3</ns7:tipoIndenizacao>
+                            <ns7:tipoCobertura>1</ns7:tipoCobertura>
+                        </ns7:casco>
+                        <ns7:condicoesEspeciais>
+                            <ns7:condicaoEspecial>
+                                <ns7:codigo>35008</ns7:codigo>
+                                <ns7:coeficiente>0</ns7:coeficiente>
+                            </ns7:condicaoEspecial>
+                            <ns7:condicaoEspecial>
+                                <ns7:codigo>12</ns7:codigo>
+                                <ns7:coeficiente>0.9</ns7:coeficiente>
+                            </ns7:condicaoEspecial>
+                            <ns7:condicaoEspecial>
+                                <ns7:codigo>108</ns7:codigo>
+                                <ns7:coeficiente>0.95</ns7:coeficiente>
+                            </ns7:condicaoEspecial>
+                            <ns7:condicaoEspecial>
+                                <ns7:codigo>15</ns7:codigo>
+                                <ns7:coeficiente>0.9</ns7:coeficiente>
+                            </ns7:condicaoEspecial>
+                            <ns7:condicaoEspecial>
+                                <ns7:codigo>35001</ns7:codigo>
+                                <ns7:coeficiente>0.9</ns7:coeficiente>
+                            </ns7:condicaoEspecial>
+                            <ns7:condicaoEspecial>
+                                <ns7:codigo>84001</ns7:codigo>
+                                <ns7:coeficiente>0.8</ns7:coeficiente>
+                            </ns7:condicaoEspecial>
+                        </ns7:condicoesEspeciais>
+                        <ns7:criptografiasCondicoesEspeciais>
+                            <ns7:criptografiaCondicaoEspecial>
+                                <codigo>35008</codigo>
+                            </ns7:criptografiaCondicaoEspecial>
+                        </ns7:criptografiasCondicoesEspeciais>
+                        <ns7:acessorios/>
+                        <ns7:clausulas>
+                            <ns7:clausula>
+                                <ns7:codigo>076</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>26C</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>C002</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>B001</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>A003</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>58I</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>38J</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>35037H</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>033</ns7:codigo>
+                            </ns7:clausula>
+                        </ns7:clausulas>
+                    </cobertura>
+                </coberturas>
+                <condutores>
+                    <condutor>
+                        <sequencia>1</sequencia>
+                        <nome>TESTE ORIGEM BONUS</nome>
+                        <cpf>80492745358</cpf>
+                        <dataNascimento>10/10/1980</dataNascimento>
+                        <principalCondutor>true</principalCondutor>
+                        <cursoDirecaoEmocional>false</cursoDirecaoEmocional>
+                        <cursoDirecaoSegura>false</cursoDirecaoSegura>
+                        <cursoDirecaoSeguraOnline>false</cursoDirecaoSeguraOnline>
+                        <profissao/>
+                    </condutor>
+                </condutores>
+            </item>
+            <item>
+                <sequenciaItem>19</sequenciaItem>
+                <classeBonus>7</classeBonus>
+                <produto>
+                    <transitoMaisGentil>
+                        <tipoContratacao>2</tipoContratacao>
+                    </transitoMaisGentil>
+                    <kmVantagensIpiranga>
+                        <contratado>false</contratado>
+                    </kmVantagensIpiranga>
+                </produto>
+                <apolice>
+                    <identificadorOrcamentoPorto>151417145</identificadorOrcamentoPorto>
+                    <identificadorItemOrcamentoPorto>151264540</identificadorItemOrcamentoPorto>
+                    <cobertura>
+                        <casco>
+                            <blindagem/>
+                        </casco>
+                        <app/>
+                        <danoMaterial/>
+                        <danoCorporal/>
+                        <acessorios>
+                            <acessorio/>
+                        </acessorios>
+                    </cobertura>
+                    <alteracaoDadoRelevante>false</alteracaoDadoRelevante>
+                </apolice>
+                <veiculo>
+                    <ns5:codigoModelo>214</ns5:codigoModelo>
+                    <ns5:anoFabricacao>2013</ns5:anoFabricacao>
+                    <ns5:anoModelo>2013</ns5:anoModelo>
+                    <ns5:classeLocalizacao>4</ns5:classeLocalizacao>
+                    <ns5:categoriaTarifaria>10</ns5:categoriaTarifaria>
+                    <ns5:zeroKM>false</ns5:zeroKM>
+                    <ns5:vistoriaEspecial>false</ns5:vistoriaEspecial>
+                    <ns5:chassiRemarcado>false</ns5:chassiRemarcado>
+                    <ns5:financiado>false</ns5:financiado>
+                    <ns5:isencaoImpostoDeficienteFisico>false</ns5:isencaoImpostoDeficienteFisico>
+                    <ns5:kitGas>false</ns5:kitGas>
+                    <ns5:blindagem>false</ns5:blindagem>
+                    <ns5:quantidadePassageiros>5</ns5:quantidadePassageiros>
+                    <ns5:tipoUso>1</ns5:tipoUso>
+                    <ns5:tipoIsencaoImposto>0</ns5:tipoIsencaoImposto>
+                    <ns5:cadastro>
+                        <ns5:tipoCombustivel>8</ns5:tipoCombustivel>
+                        <ns5:quantidadePortas>5</ns5:quantidadePortas>
+                        <ns5:quantidadePassageiros>5</ns5:quantidadePassageiros>
+                        <ns5:quantidadeCilindrada>1600</ns5:quantidadeCilindrada>
+                        <ns5:codigoMarca>1</ns5:codigoMarca>
+                        <ns5:peso>1580</ns5:peso>
+                        <ns5:codigoTipo>66</ns5:codigoTipo>
+                        <ns5:codigoEspecie>1</ns5:codigoEspecie>
+                        <ns5:codigoFamilia>5</ns5:codigoFamilia>
+                        <ns5:codigoGrupoTarifario>0</ns5:codigoGrupoTarifario>
+                        <ns5:codigoLinha>2452</ns5:codigoLinha>
+                        <ns5:codigoGrupoLinha>59</ns5:codigoGrupoLinha>
+                        <ns5:codigoGrupo>343</ns5:codigoGrupo>
+                        <ns5:cambioAutomatico>1</ns5:cambioAutomatico>
+                        <ns5:tabelaCotacao>2</ns5:tabelaCotacao>
+                        <ns5:codigoTabelaFIPE>52515</ns5:codigoTabelaFIPE>
+                        <ns5:codigoTabelaMolicar>5113836</ns5:codigoTabelaMolicar>
+                        <ns5:categoriaTarifariaOriginal>10</ns5:categoriaTarifariaOriginal>
+                        <ns5:blindagemDeSerie>false</ns5:blindagemDeSerie>
+                        <ns5:aceitacaoSeguroNovo>true</ns5:aceitacaoSeguroNovo>
+                        <ns5:aceitacaoSeguroRenovacao>true</ns5:aceitacaoSeguroRenovacao>
+                        <ns5:aceitacaoSeguroEndosso>true</ns5:aceitacaoSeguroEndosso>
+                        <ns5:valorMercado>36392</ns5:valorMercado>
+                    </ns5:cadastro>
+                </veiculo>
+                <questionario>
+                    <ns6:codigo>81</ns6:codigo>
+                    <ns6:questoes>
+                        <ns6:questao>
+                            <ns6:codigo>120</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>1</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>157</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>3</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>126</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>2</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>155</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>1</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>118</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>1</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>124</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>4</ns6:valor>
+                                </ns6:resposta>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>2</ns6:valor>
+                                </ns6:resposta>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>10</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>156</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>1</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>125</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>1</ns6:tipo>
+                                    <ns6:valor>01010000</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>19</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>1</ns6:tipo>
+                                    <ns6:valor>TESTE ORIGEM BONUS</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>20</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>1</ns6:tipo>
+                                    <ns6:valor>80492745358</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>2</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>0</ns6:tipo>
+                                    <ns6:valor>10/10/1980</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>121</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>1</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>127</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>17</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                        <ns6:questao>
+                            <ns6:codigo>151</ns6:codigo>
+                            <ns6:respostas>
+                                <ns6:resposta>
+                                    <ns6:tipo>2</ns6:tipo>
+                                    <ns6:valor>17</ns6:valor>
+                                </ns6:resposta>
+                            </ns6:respostas>
+                        </ns6:questao>
+                    </ns6:questoes>
+                </questionario>
+                <coberturas>
+                    <cobertura>
+                        <ns7:codigo>1</ns7:codigo>
+                        <ns7:produto/>
+                        <ns7:app>
+                            <ns7:importanciaSegurada>50000</ns7:importanciaSegurada>
+                        </ns7:app>
+                        <ns7:danoCorporal>
+                            <ns7:importanciaSegurada>100000</ns7:importanciaSegurada>
+                        </ns7:danoCorporal>
+                        <ns7:danoMaterial>
+                            <ns7:importanciaSegurada>100000</ns7:importanciaSegurada>
+                        </ns7:danoMaterial>
+                        <ns7:casco>
+                            <ns7:importanciaSegurada>36392</ns7:importanciaSegurada>
+                            <ns7:percentualImportanciaSegurada>1</ns7:percentualImportanciaSegurada>
+                            <ns7:fatorDepreciacao>1</ns7:fatorDepreciacao>
+                            <ns7:franquia>4598</ns7:franquia>
+                            <ns7:codigoClasseFranquia>1</ns7:codigoClasseFranquia>
+                            <ns7:tipoIndenizacao>3</ns7:tipoIndenizacao>
+                            <ns7:tipoCobertura>1</ns7:tipoCobertura>
+                        </ns7:casco>
+                        <ns7:condicoesEspeciais>
+                            <ns7:condicaoEspecial>
+                                <ns7:codigo>35001</ns7:codigo>
+                                <ns7:coeficiente>0.9</ns7:coeficiente>
+                            </ns7:condicaoEspecial>
+                            <ns7:condicaoEspecial>
+                                <ns7:codigo>84001</ns7:codigo>
+                                <ns7:coeficiente>0.8</ns7:coeficiente>
+                            </ns7:condicaoEspecial>
+                            <ns7:condicaoEspecial>
+                                <ns7:codigo>35008</ns7:codigo>
+                                <ns7:coeficiente>0</ns7:coeficiente>
+                            </ns7:condicaoEspecial>
+                            <ns7:condicaoEspecial>
+                                <ns7:codigo>12</ns7:codigo>
+                                <ns7:coeficiente>0.9</ns7:coeficiente>
+                            </ns7:condicaoEspecial>
+                            <ns7:condicaoEspecial>
+                                <ns7:codigo>108</ns7:codigo>
+                                <ns7:coeficiente>0.95</ns7:coeficiente>
+                            </ns7:condicaoEspecial>
+                            <ns7:condicaoEspecial>
+                                <ns7:codigo>15</ns7:codigo>
+                                <ns7:coeficiente>0.9</ns7:coeficiente>
+                            </ns7:condicaoEspecial>
+                        </ns7:condicoesEspeciais>
+                        <ns7:criptografiasCondicoesEspeciais>
+                            <ns7:criptografiaCondicaoEspecial>
+                                <codigo>35008</codigo>
+                            </ns7:criptografiaCondicaoEspecial>
+                        </ns7:criptografiasCondicoesEspeciais>
+                        <ns7:acessorios/>
+                        <ns7:clausulas>
+                            <ns7:clausula>
+                                <ns7:codigo>38J</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>35037H</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>033</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>076</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>26C</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>C002</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>B001</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>A003</ns7:codigo>
+                            </ns7:clausula>
+                            <ns7:clausula>
+                                <ns7:codigo>58I</ns7:codigo>
+                            </ns7:clausula>
+                        </ns7:clausulas>
+                    </cobertura>
+                </coberturas>
+                <condutores>
+                    <condutor>
+                        <sequencia>1</sequencia>
+                        <nome>TESTE ORIGEM BONUS</nome>
+                        <cpf>80492745358</cpf>
+                        <dataNascimento>10/10/1980</dataNascimento>
+                        <principalCondutor>true</principalCondutor>
+                        <cursoDirecaoEmocional>false</cursoDirecaoEmocional>
+                        <cursoDirecaoSegura>false</cursoDirecaoSegura>
+                        <cursoDirecaoSeguraOnline>false</cursoDirecaoSeguraOnline>
+                        <profissao/>
+                    </condutor>
+                </condutores>
+            </item>
+        </itens>
+        <flagTransferenciaCorretagem>false</flagTransferenciaCorretagem>
+        <atendente>
+            <tipoUsuario>C</tipoUsuario>
+            <codigoMatriculaFuncionario>14850</codigoMatriculaFuncionario>
+            <dataHoraAtualizacao>2016-04-06T13:57:12.000</dataHoraAtualizacao>
+            <tipoAtendimento>0</tipoAtendimento>
+            <estudoAceitacao>
+                <motivo></motivo>
+            </estudoAceitacao>
+        </atendente>
+    </orcamentoProposto>
+</solicitacaoOrcamento>
+      </web:calcularOrcamento>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.multicalculoauto.automovel.porto.com/CalculoSeguroWeb/calcularOrcamentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b8813128-0958-436a-a8e1-7ae7b099c0e6" isOneWay="false" action="" name="enviarProposta" bindingOperationName="enviarProposta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dc38ee77-ea75-444b-9962-a390ae251652" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.multicalculoauto.automovel.porto.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:enviarProposta>\r
+         <!--Optional:-->\r
+         <xmlProposta><Proposta><susepTransmissao>50525J</susepTransmissao><numeroPortoPrint>0</numeroPortoPrint><origemPropostaPrincipal>15</origemPropostaPrincipal><numeroPropostaPrincipal>0</numeroPropostaPrincipal><sucursalApoliceSendoRenovada>0</sucursalApoliceSendoRenovada><numeroApoliceSendoRenovada>0</numeroApoliceSendoRenovada><tipoEndosso>0</tipoEndosso><textoEndosso>0</textoEndosso><tipoProposta>0</tipoProposta><qtdeItens>1</qtdeItens><tipoEnderecamento>0</tipoEnderecamento><formaPagamento>0</formaPagamento><qtdeParcelas>0</qtdeParcelas><melhorDataParaPagamento>03/11/2015</melhorDataParaPagamento><qtdDiasMelhorData></qtdDiasMelhorData><dataInicioVigencia>03/11/2015</dataInicioVigencia><dataFinalVigencia>03/11/2016</dataFinalVigencia><diaFaturaMensal>03</diaFaturaMensal><apoliceDataInicioVigencia>03/11/2015</apoliceDataInicioVigencia><codigoTipoCalculo>4</codigoTipoCalculo><boleto>0</boleto><tipoSeguro>1</tipoSeguro><convenio>105</convenio><formaPagamentoQuantidadeDiasDoMensal>0</formaPagamentoQuantidadeDiasDoMensal><codigoPreposto>0</codigoPreposto><codigoOperacao>0</codigoOperacao><numeroTarifa>189</numeroTarifa><poe>0</poe><formaPagamentoMensal>0</formaPagamentoMensal><formaPagamentoMensalizadaVidaSimples>0</formaPagamentoMensalizadaVidaSimples><ramo>531</ramo><modalidade>0</modalidade><temApenasAnexosReguralizados>0</temApenasAnexosReguralizados><temErrosNaoLiberados>0</temErrosNaoLiberados><temDevolutivasQuebradas>0</temDevolutivasQuebradas><temProtocolo>0</temProtocolo><coeficienteIOF>0.0</coeficienteIOF><coeficienteIOFVida>0.0</coeficienteIOFVida><dataBoleto></dataBoleto><onus>5</onus><unidade>0</unidade><status>2</status><tipoEmissao>1</tipoEmissao><texto></texto><susepLider></susepLider><versaoDLLCalculo>20151130</versaoDLLCalculo><tipoCliente>1</tipoCliente><opcaoPrecoOnline>S</opcaoPrecoOnline><dataInicioProcesso></dataInicioProcesso><codigoTransacaoWebService></codigoTransacaoWebService><percentualDescontoCartaoPorto>0</percentualDescontoCartaoPorto><flagSeguroCorretor></flagSeguroCorretor><numeroCpfOrcamento></numeroCpfOrcamento><digitoCpfOrcamento></digitoCpfOrcamento><correntistaItau>-1</correntistaItau><sucursal></sucursal><contingenciaMulticalculo>false</contingenciaMulticalculo><Corretores><Corretor><susep>50525J</susep><participacao>100.0</participacao><lider>S</lider><ordemcnpj>1</ordemcnpj><endereco>PC ALFREDO EGYDIO DE SOUZA ARANHA</endereco><digitocpfcnpj>6</digitocpfcnpj><cpfcnpj>43644285</cpfcnpj></Corretor></Corretores><Enderecos><Endereco><tipo>0</tipo><tipoLogradouro></tipoLogradouro><nome></nome><numero>0</numero><complemento></complemento><cep>01227</cep><complementoCep>000</complementoCep><bairro></bairro><cidade></cidade><uf></uf><classeLocalizacao>0</classeLocalizacao></Endereco></Enderecos><Itens><Item><numeroCalculoItau>0</numeroCalculoItau><numeroItem>19</numeroItem><origemPropostaIndividual>15</origemPropostaIndividual><numeroPropostaIndividual>0</numeroPropostaIndividual><classeBonus>0</classeBonus><classeLocalizacao>11</classeLocalizacao><errosNoCalculo></errosNoCalculo><alteracaoDadosRelevantes>1</alteracaoDadosRelevantes><renovacaoOutraCia>N</renovacaoOutraCia><falhaSerasa></falhaSerasa><stringConsistencia></stringConsistencia><dataCalculoEncontrada></dataCalculoEncontrada><descontoEspecial>0</descontoEspecial><coeficienteDescontoComercialCascoAcessorios>1.0</coeficienteDescontoComercialCascoAcessorios><coeficienteDescontoComercialRCFVDM>1.0</coeficienteDescontoComercialRCFVDM><coeficienteDescontoComercialRCFVDC>1.0</coeficienteDescontoComercialRCFVDC><coeficienteDescontoComercialAPP>1.0</coeficienteDescontoComercialAPP><coeficienteDescontoTarifarioCascoAcessorios>1.0</coeficienteDescontoTarifarioCascoAcessorios><coeficienteDescontoTarifarioRCFVDM>1.0</coeficienteDescontoTarifarioRCFVDM><coeficienteDescontoTarifarioRCFVDC>1.0</coeficienteDescontoTarifarioRCFVDC><coeficienteDescontoTarifarioAPP>1.0</coeficienteDescontoTarifarioAPP><cepCirculacaoVeiculo></cepCirculacaoVeiculo><valorLiquidoPremio>0.0</valorLiquidoPremio><descontoConcessaoEletronica>0.0</descontoConcessaoEletronica><descontoEmissaoEspecial>0.0</descontoEmissaoEspecial><descontoRenovacao>0.0</descontoRenovacao><coeficienteDescontoEspecial>0.0</coeficienteDescontoEspecial><concessaoDAFVAzul></concessaoDAFVAzul><concessaoDAFVIAzul></concessaoDAFVIAzul><flagPessoaComDeficiencia>N</flagPessoaComDeficiencia><flagPolCobertura></flagPolCobertura><dataCadastroCobertura></dataCadastroCobertura><dataValidadeCobertura></dataValidadeCobertura><cpfOrigemPorto></cpfOrigemPorto><ordemcpfOrigemPorto></ordemcpfOrigemPorto><digitocpfOrigemPorto></digitocpfOrigemPorto><cpfOrigemAzul></cpfOrigemAzul><ordemcpfOrigemAzul></ordemcpfOrigemAzul><digitocpfOrigemAzul></digitocpfOrigemAzul><cpfOrigemItau></cpfOrigemItau><ordemcpfOrigemItau></ordemcpfOrigemItau><digitocpfOrigemItau></digitocpfOrigemItau><impressaoCriptografica></impressaoCriptografica><impressaoPolCoberturaAzul></impressaoPolCoberturaAzul><cepCirculacao></cepCirculacao><cpfDescontoFamilia></cpfDescontoFamilia><cepPernoite>01227000</cepPernoite><criticaCalculo></criticaCalculo><coeficienteControleAutomatico></coeficienteControleAutomatico><tipoReaproveitamentoBonus></tipoReaproveitamentoBonus><pontuacaoAdquirida>0</pontuacaoAdquirida><dataCadastro></dataCadastro><dataValidade></dataValidade><cpfOrigem></cpfOrigem><ordemcpfOrigem>0</ordemcpfOrigem><digitocpfOrigem>0</digitocpfOrigem><coeficienteAutoMoto></coeficienteAutoMoto><perfilElegivel>0</perfilElegivel><tipoUtilizacaoVeiculoPJ>0</tipoUtilizacaoVeiculoPJ><disponivelRecorrencia>false</disponivelRecorrencia><CondicoesEspeciais><CondicaoEspecial><codigo>12</codigo><percentual>0.8299999833106995</percentual><coeficienteDesconto>17.000001907348633</coeficienteDesconto><criptografiaDesconto></criptografiaDesconto><descricao></descricao></CondicaoEspecial></CondicoesEspeciais><Clausulas><Clausula><codigo>F23</codigo><coeficiente>0.0</coeficiente><cobrancaPremio>N</cobrancaPremio><dataInicioVigencia>01/01/2001</dataInicioVigencia><dataFinalVigencia>01/01/2001</dataFinalVigencia><texto></texto><prazoClausula58>1</prazoClausula58><tipoServicoItau>0</tipoServicoItau><importanciaSeguradaClausula>0.0</importanciaSeguradaClausula><valorPremioCalculado>0.0</valorPremioCalculado><valorPremioFinal>0.0</valorPremioFinal><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><franquia></franquia><franquiaRetrovisor></franquiaRetrovisor><franquiaLanternaFarol></franquiaLanternaFarol><franquiaLateral></franquiaLateral><franquiaVidrosLaterais></franquiaVidrosLaterais><franquiaTraseiro></franquiaTraseiro><franquiaFarolXenonio></franquiaFarolXenonio><franquiaLanternaLed></franquiaLanternaLed><limiteMaximoIndenizacao></limiteMaximoIndenizacao></Clausula><Clausula><codigo>74A</codigo><coeficiente>0.0</coeficiente><cobrancaPremio>S</cobrancaPremio><dataInicioVigencia></dataInicioVigencia><dataFinalVigencia></dataFinalVigencia><texto></texto><prazoClausula58>0</prazoClausula58><tipoServicoItau>117</tipoServicoItau><importanciaSeguradaClausula>0.0</importanciaSeguradaClausula><valorPremioCalculado>0.0</valorPremioCalculado><valorPremioFinal>0.0</valorPremioFinal><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><franquia></franquia><franquiaRetrovisor></franquiaRetrovisor><franquiaLanternaFarol></franquiaLanternaFarol><franquiaLateral></franquiaLateral><franquiaVidrosLaterais></franquiaVidrosLaterais><franquiaTraseiro></franquiaTraseiro><franquiaFarolXenonio></franquiaFarolXenonio><franquiaLanternaLed></franquiaLanternaLed><limiteMaximoIndenizacao></limiteMaximoIndenizacao></Clausula></Clausulas><Bonus><dataInicioVigenciaOutraCia>0</dataInicioVigenciaOutraCia><dataFinalVigenciaOutraCia>0</dataFinalVigenciaOutraCia><seguradoraOutraCia>0</seguradoraOutraCia><sucursalOutraCia>0</sucursalOutraCia><numeroApoliceOutraCia>0</numeroApoliceOutraCia><numeroItemOutraCia>0</numeroItemOutraCia><sucursalReaproveitamentoBonus>0</sucursalReaproveitamentoBonus><apoliceReaproveitamentoBonus>0</apoliceReaproveitamentoBonus><itemReaproveitamentoBonus>0</itemReaproveitamentoBonus><tipoReaproveitamentoBonus></tipoReaproveitamentoBonus></Bonus><Veiculo><codigo>533</codigo><anoFabricacao>2012</anoFabricacao><anoModelo>2012</anoModelo><numeroLicenca></numeroLicenca><parteInicialNumeroChassi></parteInicialNumeroChassi><parteFinalNumeroChassi></parteFinalNumeroChassi><uso>1</uso><zeroKM>N</zeroKM><qtdePassageiro>5</qtdePassageiro><recuperado>N</recuperado><categoriaTarifaria>10</categoriaTarifaria><tipoCombustivel>8</tipoCombustivel><qtdePortas>5</qtdePortas><blindado>0</blindado><chassiRemarcado>N</chassiRemarcado><codigoFIPE>13285</codigoFIPE><codigoIdentificacao>0</codigoIdentificacao><numeroAgendamentoDAF>0.0</numeroAgendamentoDAF><numeroNF>0</numeroNF><dataEmissaoNF></dataEmissaoNF><dataSaidaConcessionaria></dataSaidaConcessionaria><concessionaria></concessionaria><valorNF>0.0</valorNF><dispositivoAntifurto>0</dispositivoAntifurto><kitGas>0</kitGas><cambioAutomatico>1</cambioAutomatico><placaChassiAtivo>0</placaChassiAtivo><placaChassiAtivoAzul>0</placaChassiAtivoAzul><placaChassiAtivoItauUnibanco>0</placaChassiAtivoItauUnibanco><grupoRegiao>2</grupoRegiao><valorReferenciaVeiculo>0.0</valorReferenciaVeiculo><valorMaximoVeiculo>0.0</valorMaximoVeiculo><veiculoLinhaGrupo>59</veiculoLinhaGrupo><veiculoGrupoTarifario>0</veiculoGrupoTarifario><veiculoFlagComDafOriginal>0</veiculoFlagComDafOriginal><veiculoGrupo>342</veiculoGrupo><veiculoLinha>1953</veiculoLinha><veiculoMarca>4</veiculoMarca><veiculoTipo>53</veiculoTipo><veiculoRecemLancados>0</veiculoRecemLancados><veiculoCilindrada>1400</veiculoCilindrada><veiculoEspecieVeiculo>2</veiculoEspecieVeiculo><veiculoEstiloVeiculo>25</veiculoEstiloVeiculo><veiculoPeso>1597</veiculoPeso><valorBasicoVeiculo>30889.0</valorBasicoVeiculo><flagAceitacaoSegurosNovos>1</flagAceitacaoSegurosNovos><flagAceitacaoEndosso>1</flagAceitacaoEndosso><flagAceitacaoRenovacao>1</flagAceitacaoRenovacao><valorCustoRastreador>0.0</valorCustoRastreador><flagVeiculoFinanciado>0</flagVeiculoFinanciado><tipoCombustivelNovo>0</tipoCombustivelNovo><flagVeiculoBlindadoSerie>0</flagVeiculoBlindadoSerie><categoriaTarifariaOriginal>10</categoriaTarifariaOriginal></Veiculo><Apolice><sucursal>0</sucursal><apolice>0</apolice><endosso>0</endosso><itemApolice>0</itemApolice><sinistroPorto>0</sinistroPorto></Apolice><Casco><classeFranquia>1</classeFranquia><codigoCobertura>1</codigoCobertura><valorFranquia>0.0</valorFranquia><valorImportanciaSegurada>30890.0</valorImportanciaSegurada><incidenciaIpiIcms>0</incidenciaIpiIcms><valorLiquidoPremio>0.0</valorLiquidoPremio><percentualImportanciaSegurada>0.9</percentualImportanciaSegurada><fatorDepreciacao>0.0</fatorDepreciacao><valorBasicoVeiculo>0.0</valorBasicoVeiculo><valorMaximoVeiculo>0.0</valorMaximoVeiculo><tipoPremioFinal>C</tipoPremioFinal><tabelaCotacao>2</tabelaCotacao><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><alteracaoCobertura>0</alteracaoCobertura><valorSaldoPremioMensal>0.0</valorSaldoPremioMensal><valorParcelasPendentes>0.0</valorParcelasPendentes><valorPremioVeiculo>0.0</valorPremioVeiculo><taxa>0.0</taxa><dataCalculo>03/11/2015</dataCalculo><valorPremioBatenteAzul>0.0</valorPremioBatenteAzul><valorPremioMaximoBatenteItau>0.0</valorPremioMaximoBatenteItau><valorPremioMinimoBatenteItau>0.0</valorPremioMinimoBatenteItau></Casco><DanoMaterial><classeFranquia>0</classeFranquia><valorFranquia>0.0</valorFranquia><valorImportanciaSegurada>50000.0</valorImportanciaSegurada><valorLiquidoPremio>0.0</valorLiquidoPremio><tipoPremioFinal>C</tipoPremioFinal><alteracaoCobertura>0</alteracaoCobertura><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><valorSaldoPremioMensal>0.0</valorSaldoPremioMensal><valorParcelasPendentes>0.0</valorParcelasPendentes><coeficiente>0.0</coeficiente><dataCalculo>03/11/2015</dataCalculo><valorPremioBatenteAzul>0.0</valorPremioBatenteAzul><valorPremioMaximoBatenteItau>0.0</valorPremioMaximoBatenteItau><valorPremioMinimoBatenteItau>0.0</valorPremioMinimoBatenteItau><importanciaSeguradaApoliceParaEndosso>0.0</importanciaSeguradaApoliceParaEndosso></DanoMaterial><DanoCorporal><classeFranquia>0</classeFranquia><valorFranquia>0.0</valorFranquia><valorImportanciaSegurada>50000.0</valorImportanciaSegurada><valorLiquidoPremio>0.0</valorLiquidoPremio><tipoPremioFinal>C</tipoPremioFinal><alteracaoCobertura>0</alteracaoCobertura><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><valorSaldoPremioMensal>0.0</valorSaldoPremioMensal><valorParcelasPendentes>0.0</valorParcelasPendentes><coeficiente>0.0</coeficiente><dataCalculo>03/11/2015</dataCalculo><valorPremioBatenteAzul>0.0</valorPremioBatenteAzul><valorPremioMaximoBatenteItau>0.0</valorPremioMaximoBatenteItau><valorPremioMinimoBatenteItau>0.0</valorPremioMinimoBatenteItau><importanciaSeguradaApoliceParaEndosso>0.0</importanciaSeguradaApoliceParaEndosso></DanoCorporal><APP><valorImportanciaSeguradaInvalidez>10000.0</valorImportanciaSeguradaInvalidez><valorImportanciaSeguradaMorte>10000.0</valorImportanciaSeguradaMorte><valorImportanciaSeguradaDMH>0.0</valorImportanciaSeguradaDMH><valorLiquidoPremio>0.0</valorLiquidoPremio><tipoPremioFinal>C</tipoPremioFinal><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><alteracaoCobertura>0</alteracaoCobertura><valorSaldoPremioMensal>0.0</valorSaldoPremioMensal><valorParcelasPendentes>0.0</valorParcelasPendentes><taxaInvalidez>0.0</taxaInvalidez><taxaMorte>0.0</taxaMorte><taxaDMH>0.0</taxaDMH><qtdePassageiros>0.0</qtdePassageiros><dataCalculo>03/11/2015</dataCalculo><valorPremioLiquidoAnualInvalidez>0.0</valorPremioLiquidoAnualInvalidez><valorPremioLiquidoAnualMorte>0.0</valorPremioLiquidoAnualMorte><valorPremioLiquidoAnualDMH>0.0</valorPremioLiquidoAnualDMH></APP><Questionario><Perfil><tipoQuestao>C</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>151</questao><resposta>15</resposta><subresposta>0</subresposta><data></data><texto></texto></Perfil><Perfil><tipoQuestao>C</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>126</questao><resposta>1</resposta><subresposta>0</subresposta><data></data><texto></texto></Perfil><Perfil><tipoQuestao>C</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>155</questao><resposta>1</resposta><subresposta>0</subresposta><data></data><texto></texto></Perfil><Perfil><tipoQuestao>C</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>157</questao><resposta>1</resposta><subresposta>0</subresposta><data></data><texto></texto></Perfil><Perfil><tipoQuestao>C</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>156</questao><resposta>1</resposta><subresposta>0</subresposta><data></data><texto></texto></Perfil><Perfil><tipoQuestao>C</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>124</questao><resposta>1</resposta><subresposta>0</subresposta><data></data><texto></texto></Perfil><Perfil><tipoQuestao>C</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>124</questao><resposta>2</resposta><subresposta>0</subresposta><data></data><texto></texto></Perfil><Perfil><tipoQuestao>C</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>124</questao><resposta>4</resposta><subresposta>0</subresposta><data></data><texto></texto></Perfil><Perfil><tipoQuestao>D</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>2</questao><resposta>0</resposta><subresposta>0</subresposta><data>01/12/1970</data><texto></texto></Perfil><Perfil><tipoQuestao>T</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>19</questao><resposta>0</resposta><subresposta>0</subresposta><data></data><texto>ELIANA MENDES MALH</texto></Perfil><Perfil><tipoQuestao>T</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>20</questao><resposta>0</resposta><subresposta>0</subresposta><data></data><texto>01010001035</texto></Perfil><Perfil><tipoQuestao>C</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>120</questao><resposta>2</resposta><subresposta>0</subresposta><data></data><texto></texto></Perfil><Perfil><tipoQuestao>C</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>121</questao><resposta>2</resposta><subresposta>0</subresposta><data></data><texto></texto></Perfil><Perfil><tipoQuestao>T</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>125</questao><resposta>0</resposta><subresposta>0</subresposta><data></data><texto>01227000</texto></Perfil><Perfil><tipoQuestao>C</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>118</questao><resposta>1</resposta><subresposta>0</subresposta><data></data><texto></texto></Perfil><Perfil><tipoQuestao>C</tipoQuestao><tipoFormulario>81</tipoFormulario><questao>127</questao><resposta>18</resposta><subresposta>0</subresposta><data></data><texto></texto></Perfil></Questionario><TransitoMaisGentil><flagTransitoMaisGentil>N</flagTransitoMaisGentil><numeroCNH></numeroCNH><numeroRG></numeroRG><primeiraCNHCondutor></primeiraCNHCondutor><numeroCPF></numeroCPF><digitoCPF></digitoCPF><dominioAdesaoTMG>1</dominioAdesaoTMG></TransitoMaisGentil></Item></Itens><Transmissao><analiseRisco>1</analiseRisco><geracaoCargaArquivo>0</geracaoCargaArquivo><emissaoAutomatica>1</emissaoAutomatica><produto>71036</produto><dataHora>03/11/2015 09:58:56</dataHora><liberacaoRegrasEspeciaisAceitacao>0</liberacaoRegrasEspeciaisAceitacao><dataHoraExtracao>03/11/2015 09:58:56</dataHoraExtracao><qtde>1</qtde></Transmissao><Segurado><numero>0</numero><nome>ELIANA MENDES MALH</nome><nomeSeguradoSerasa></nomeSeguradoSerasa><tipoPessoa>F</tipoPessoa><cpf>010100010</cpf><numeroOrdemCGC>0</numeroOrdemCGC><cpfDigito>35</cpfDigito><dataNascimentoFundacao>01/12/1970</dataNascimentoFundacao><sexo>F</sexo><estadoCivil>2</estadoCivil><motivoNaoPreenchimentoCPF></motivoNaoPreenchimentoCPF><ramoAtividade></ramoAtividade><numeroRG></numeroRG><numeroCNH></numeroCNH><categoriaCNH></categoriaCNH><email></email><tipoDocumento></tipoDocumento><orgaoExpedidor></orgaoExpedidor><expedidoEm></expedidoEm><atividadeProfissional>0</atividadeProfissional><atividadeDaEmpresa></atividadeDaEmpresa><profissao></profissao><dataNascimentoFundacaoSerasa></dataNascimentoFundacaoSerasa><pontosCriterioPrecificacao>0</pontosCriterioPrecificacao><sinistroAnterior>0</sinistroAnterior><falhaSerasa>1</falhaSerasa><analiseRisco>N</analiseRisco><clienteAtivoItauUnibanco>0</clienteAtivoItauUnibanco><cidade>SAO PAULO                                    </cidade><Bloqueio><diferenciado>0</diferenciado><historicoCPF>0</historicoCPF><historicoCPFCaminhoneiro>0</historicoCPFCaminhoneiro><internoCaminhoneiro>0</internoCaminhoneiro><altoIndiceSinistralidade>0</altoIndiceSinistralidade><recusaRiscoProposto>0</recusaRiscoProposto><cpf>0</cpf><cpfCaminhoneiro>0</cpfCaminhoneiro><interno>0</interno><preditorRecusaTecnica>0</preditorRecusaTecnica><preditorRecusaTecnicaVeiculo>0</preditorRecusaTecnicaVeiculo><ordemTecnica>0</ordemTecnica><fichaCadastral>0</fichaCadastral><declinavelAuto>0</declinavelAuto><preditorTratativaDiferenciada>0</preditorTratativaDiferenciada><diferenciadoCaminhoneiro>0</diferenciadoCaminhoneiro><preditorRecusaHistorico>0</preditorRecusaHistorico><especificoSerasa>0</especificoSerasa></Bloqueio><Produtos/><segmentoItau>0</segmentoItau></Segurado><VendaConvenio><agenciaAngariacao>1500</agenciaAngariacao><digitoAgenciaAngariacao></digitoAgenciaAngariacao><banco>341</banco><agencia>1500</agencia><digitoAgencia></digitoAgencia><contaCorrente>01010</contaCorrente><digitoContaCorrente>1</digitoContaCorrente><produtor>99999</produtor><pontoVenda></pontoVenda><postoServico></postoServico><segmento>6</segmento><segmentoCliente></segmentoCliente><origemConvenio></origemConvenio><funcional></funcional><tipoPessoa>F</tipoPessoa><numeroCpfCnpj>10100010</numeroCpfCnpj><ordemCnpj></ordemCnpj><digitoCpfCnpj>35</digitoCpfCnpj><codigoOrcamento>200023193</codigoOrcamento><coCorretor></coCorretor></VendaConvenio><Azul><numeroItem>19</numeroItem><Itens><Item><numeroCalculoItau>0</numeroCalculoItau><numeroItem>0</numeroItem><origemPropostaIndividual>0</origemPropostaIndividual><numeroPropostaIndividual>0</numeroPropostaIndividual><classeBonus>0</classeBonus><classeLocalizacao>0</classeLocalizacao><errosNoCalculo></errosNoCalculo><alteracaoDadosRelevantes></alteracaoDadosRelevantes><renovacaoOutraCia></renovacaoOutraCia><falhaSerasa></falhaSerasa><stringConsistencia></stringConsistencia><dataCalculoEncontrada></dataCalculoEncontrada><descontoEspecial>0</descontoEspecial><coeficienteDescontoComercialCascoAcessorios>1.0</coeficienteDescontoComercialCascoAcessorios><coeficienteDescontoComercialRCFVDM>1.0</coeficienteDescontoComercialRCFVDM><coeficienteDescontoComercialRCFVDC>1.0</coeficienteDescontoComercialRCFVDC><coeficienteDescontoComercialAPP>1.0</coeficienteDescontoComercialAPP><coeficienteDescontoTarifarioCascoAcessorios>1.0</coeficienteDescontoTarifarioCascoAcessorios><coeficienteDescontoTarifarioRCFVDM>1.0</coeficienteDescontoTarifarioRCFVDM><coeficienteDescontoTarifarioRCFVDC>1.0</coeficienteDescontoTarifarioRCFVDC><coeficienteDescontoTarifarioAPP>1.0</coeficienteDescontoTarifarioAPP><cepCirculacaoVeiculo></cepCirculacaoVeiculo><valorLiquidoPremio>0.0</valorLiquidoPremio><descontoConcessaoEletronica>0.0</descontoConcessaoEletronica><descontoEmissaoEspecial>0.0</descontoEmissaoEspecial><descontoRenovacao>0.0</descontoRenovacao><coeficienteDescontoEspecial>0.0</coeficienteDescontoEspecial><concessaoDAFVAzul></concessaoDAFVAzul><concessaoDAFVIAzul></concessaoDAFVIAzul><flagPessoaComDeficiencia>N</flagPessoaComDeficiencia><flagPolCobertura></flagPolCobertura><dataCadastroCobertura></dataCadastroCobertura><dataValidadeCobertura></dataValidadeCobertura><cpfOrigemPorto></cpfOrigemPorto><ordemcpfOrigemPorto></ordemcpfOrigemPorto><digitocpfOrigemPorto></digitocpfOrigemPorto><cpfOrigemAzul></cpfOrigemAzul><ordemcpfOrigemAzul></ordemcpfOrigemAzul><digitocpfOrigemAzul></digitocpfOrigemAzul><cpfOrigemItau></cpfOrigemItau><ordemcpfOrigemItau></ordemcpfOrigemItau><digitocpfOrigemItau></digitocpfOrigemItau><impressaoCriptografica></impressaoCriptografica><impressaoPolCoberturaAzul></impressaoPolCoberturaAzul><cepCirculacao></cepCirculacao><cpfDescontoFamilia></cpfDescontoFamilia><cepPernoite>0</cepPernoite><criticaCalculo></criticaCalculo><coeficienteControleAutomatico></coeficienteControleAutomatico><tipoReaproveitamentoBonus></tipoReaproveitamentoBonus><pontuacaoAdquirida>0</pontuacaoAdquirida><dataCadastro></dataCadastro><dataValidade></dataValidade><cpfOrigem></cpfOrigem><ordemcpfOrigem>0</ordemcpfOrigem><digitocpfOrigem>0</digitocpfOrigem><coeficienteAutoMoto></coeficienteAutoMoto><perfilElegivel>0</perfilElegivel><tipoUtilizacaoVeiculoPJ>0</tipoUtilizacaoVeiculoPJ><disponivelRecorrencia>false</disponivelRecorrencia><CondicoesEspeciais><CondicaoEspecial><codigo>1</codigo><percentual>0.8299999833106995</percentual><coeficienteDesconto>17.000001907348633</coeficienteDesconto><criptografiaDesconto></criptografiaDesconto><descricao></descricao></CondicaoEspecial></CondicoesEspeciais><Clausulas><Clausula><codigo>F23</codigo><coeficiente>0.0</coeficiente><cobrancaPremio>N</cobrancaPremio><dataInicioVigencia>01/01/2001</dataInicioVigencia><dataFinalVigencia>01/01/2001</dataFinalVigencia><texto></texto><prazoClausula58>1</prazoClausula58><tipoServicoItau>0</tipoServicoItau><importanciaSeguradaClausula>0.0</importanciaSeguradaClausula><valorPremioCalculado>0.0</valorPremioCalculado><valorPremioFinal>0.0</valorPremioFinal><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><franquia></franquia><franquiaRetrovisor></franquiaRetrovisor><franquiaLanternaFarol></franquiaLanternaFarol><franquiaLateral></franquiaLateral><franquiaVidrosLaterais></franquiaVidrosLaterais><franquiaTraseiro></franquiaTraseiro><franquiaFarolXenonio></franquiaFarolXenonio><franquiaLanternaLed></franquiaLanternaLed><limiteMaximoIndenizacao></limiteMaximoIndenizacao></Clausula><Clausula><codigo>37H</codigo><coeficiente>0.0</coeficiente><cobrancaPremio>S</cobrancaPremio><dataInicioVigencia>01/01/2001</dataInicioVigencia><dataFinalVigencia>01/01/2001</dataFinalVigencia><texto>Assistencia 24 hs Gratuita</texto><prazoClausula58>1</prazoClausula58><tipoServicoItau>6800</tipoServicoItau><importanciaSeguradaClausula>0.0</importanciaSeguradaClausula><valorPremioCalculado>0.0</valorPremioCalculado><valorPremioFinal>0.0</valorPremioFinal><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><franquia></franquia><franquiaRetrovisor></franquiaRetrovisor><franquiaLanternaFarol></franquiaLanternaFarol><franquiaLateral></franquiaLateral><franquiaVidrosLaterais></franquiaVidrosLaterais><franquiaTraseiro></franquiaTraseiro><franquiaFarolXenonio></franquiaFarolXenonio><franquiaLanternaLed></franquiaLanternaLed><limiteMaximoIndenizacao></limiteMaximoIndenizacao></Clausula><Clausula><codigo>38H</codigo><coeficiente>0.0</coeficiente><cobrancaPremio>S</cobrancaPremio><dataInicioVigencia>01/01/2001</dataInicioVigencia><dataFinalVigencia>01/01/2001</dataFinalVigencia><texto>Vidros</texto><prazoClausula58>1</prazoClausula58><tipoServicoItau>6693</tipoServicoItau><importanciaSeguradaClausula>0.0</importanciaSeguradaClausula><valorPremioCalculado>0.0</valorPremioCalculado><valorPremioFinal>0.0</valorPremioFinal><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><franquia></franquia><franquiaRetrovisor></franquiaRetrovisor><franquiaLanternaFarol></franquiaLanternaFarol><franquiaLateral></franquiaLateral><franquiaVidrosLaterais></franquiaVidrosLaterais><franquiaTraseiro></franquiaTraseiro><franquiaFarolXenonio></franquiaFarolXenonio><franquiaLanternaLed></franquiaLanternaLed><limiteMaximoIndenizacao></limiteMaximoIndenizacao></Clausula><Clausula><codigo>135A</codigo><coeficiente>0.0</coeficiente><cobrancaPremio>S</cobrancaPremio><dataInicioVigencia></dataInicioVigencia><dataFinalVigencia></dataFinalVigencia><texto></texto><prazoClausula58>0</prazoClausula58><tipoServicoItau>117</tipoServicoItau><importanciaSeguradaClausula>0.0</importanciaSeguradaClausula><valorPremioCalculado>0.0</valorPremioCalculado><valorPremioFinal>0.0</valorPremioFinal><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><franquia></franquia><franquiaRetrovisor></franquiaRetrovisor><franquiaLanternaFarol></franquiaLanternaFarol><franquiaLateral></franquiaLateral><franquiaVidrosLaterais></franquiaVidrosLaterais><franquiaTraseiro></franquiaTraseiro><franquiaFarolXenonio></franquiaFarolXenonio><franquiaLanternaLed></franquiaLanternaLed><limiteMaximoIndenizacao></limiteMaximoIndenizacao></Clausula></Clausulas><Veiculo><codigo>0</codigo><anoFabricacao></anoFabricacao><anoModelo></anoModelo><numeroLicenca></numeroLicenca><parteInicialNumeroChassi></parteInicialNumeroChassi><parteFinalNumeroChassi></parteFinalNumeroChassi><uso>0</uso><zeroKM></zeroKM><qtdePassageiro>0</qtdePassageiro><recuperado></recuperado><categoriaTarifaria>0</categoriaTarifaria><tipoCombustivel>0</tipoCombustivel><qtdePortas>0</qtdePortas><blindado>0</blindado><chassiRemarcado></chassiRemarcado><codigoFIPE>0</codigoFIPE><codigoIdentificacao></codigoIdentificacao><numeroAgendamentoDAF>0.0</numeroAgendamentoDAF><numeroNF>0</numeroNF><dataEmissaoNF></dataEmissaoNF><dataSaidaConcessionaria></dataSaidaConcessionaria><concessionaria></concessionaria><valorNF>0.0</valorNF><dispositivoAntifurto></dispositivoAntifurto><kitGas>0</kitGas><cambioAutomatico>0</cambioAutomatico><placaChassiAtivo>0</placaChassiAtivo><placaChassiAtivoAzul>0</placaChassiAtivoAzul><placaChassiAtivoItauUnibanco>0</placaChassiAtivoItauUnibanco><grupoRegiao>0</grupoRegiao><valorReferenciaVeiculo>0.0</valorReferenciaVeiculo><valorMaximoVeiculo>0.0</valorMaximoVeiculo><veiculoLinhaGrupo>0</veiculoLinhaGrupo><veiculoGrupoTarifario>0</veiculoGrupoTarifario><veiculoFlagComDafOriginal>0</veiculoFlagComDafOriginal><veiculoGrupo>0</veiculoGrupo><veiculoLinha>0</veiculoLinha><veiculoMarca>0</veiculoMarca><veiculoTipo>0</veiculoTipo><veiculoRecemLancados>0</veiculoRecemLancados><veiculoCilindrada>0</veiculoCilindrada><veiculoEspecieVeiculo>0</veiculoEspecieVeiculo><veiculoEstiloVeiculo>0</veiculoEstiloVeiculo><veiculoPeso>0</veiculoPeso><valorBasicoVeiculo>0.0</valorBasicoVeiculo><flagAceitacaoSegurosNovos>0</flagAceitacaoSegurosNovos><flagAceitacaoEndosso>0</flagAceitacaoEndosso><flagAceitacaoRenovacao>0</flagAceitacaoRenovacao><flagVeiculoFinanciado>0</flagVeiculoFinanciado><codigoMolicar></codigoMolicar><digitoMolicar></digitoMolicar><tipoCombustivelNovo>0</tipoCombustivelNovo><flagVeiculoBlindadoSerie></flagVeiculoBlindadoSerie><categoriaTarifariaOriginal>0</categoriaTarifariaOriginal></Veiculo><DanoMaterial><classeFranquia>0</classeFranquia><valorFranquia>0.0</valorFranquia><valorImportanciaSegurada>50000.0</valorImportanciaSegurada><valorLiquidoPremio>0.0</valorLiquidoPremio><tipoPremioFinal>C</tipoPremioFinal><alteracaoCobertura>0</alteracaoCobertura><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><valorSaldoPremioMensal>0.0</valorSaldoPremioMensal><valorParcelasPendentes>0.0</valorParcelasPendentes><coeficiente>0.0</coeficiente><dataCalculo>03/11/2015</dataCalculo><valorPremioBatenteAzul>0.0</valorPremioBatenteAzul><valorPremioMaximoBatenteItau>0.0</valorPremioMaximoBatenteItau><valorPremioMinimoBatenteItau>0.0</valorPremioMinimoBatenteItau><importanciaSeguradaApoliceParaEndosso>0.0</importanciaSeguradaApoliceParaEndosso></DanoMaterial><DanoCorporal><classeFranquia>0</classeFranquia><valorFranquia>0.0</valorFranquia><valorImportanciaSegurada>50000.0</valorImportanciaSegurada><valorLiquidoPremio>0.0</valorLiquidoPremio><tipoPremioFinal>C</tipoPremioFinal><alteracaoCobertura>0</alteracaoCobertura><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><valorSaldoPremioMensal>0.0</valorSaldoPremioMensal><valorParcelasPendentes>0.0</valorParcelasPendentes><coeficiente>0.0</coeficiente><dataCalculo>03/11/2015</dataCalculo><valorPremioBatenteAzul>0.0</valorPremioBatenteAzul><valorPremioMaximoBatenteItau>0.0</valorPremioMaximoBatenteItau><valorPremioMinimoBatenteItau>0.0</valorPremioMinimoBatenteItau><importanciaSeguradaApoliceParaEndosso>0.0</importanciaSeguradaApoliceParaEndosso></DanoCorporal><APP><valorImportanciaSeguradaInvalidez>10000.0</valorImportanciaSeguradaInvalidez><valorImportanciaSeguradaMorte>10000.0</valorImportanciaSeguradaMorte><valorImportanciaSeguradaDMH>0.0</valorImportanciaSeguradaDMH><valorLiquidoPremio>0.0</valorLiquidoPremio><tipoPremioFinal>C</tipoPremioFinal><valorDiferencaPremioAnual>0.0</valorDiferencaPremioAnual><alteracaoCobertura>0</alteracaoCobertura><valorSaldoPremioMensal>0.0</valorSaldoPremioMensal><valorParcelasPendentes>0.0</valorParcelasPendentes><taxaInvalidez>0.0</taxaInvalidez><taxaMorte>0.0</taxaMorte><taxaDMH>0.0</taxaDMH><qtdePassageiros>0.0</qtdePassageiros><dataCalculo>03/11/2015</dataCalculo><valorPremioLiquidoAnualInvalidez>0.0</valorPremioLiquidoAnualInvalidez><valorPremioLiquidoAnualMorte>0.0</valorPremioLiquidoAnualMorte><valorPremioLiquidoAnualDMH>0.0</valorPremioLiquidoAnualDMH></APP></Item></Itens></Azul><Itau><Corretores><Corretor><susep>50525J</susep><participacao>100.0</participacao><lider>S</lider><ordemcnpj>1</ordemcnpj><endereco>PC ALFREDO EGYDIO DE SOUZA ARANHA</endereco><digitocpfcnpj>6</digitocpfcnpj><cpfcnpj>43644285</cpfcnpj></Corretor></Corretores><comissaoCorretorItau>0.0</comissaoCorretorItau></Itau><numeroSucursalFilial>1</numeroSucursalFilial></Proposta></xmlProposta>\r
+      </web:enviarProposta>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.multicalculoauto.automovel.porto.com/CalculoSeguroWeb/enviarPropostaRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c8419617-2461-4daf-ab02-85b36d62eff7" isOneWay="false" action="" name="obterDesconto" bindingOperationName="obterDesconto" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ed35ab2e-502c-4336-ac06-93fde8363e74" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/multicalculoautoWS/CalculoSeguroWebService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.multicalculoauto.automovel.porto.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:obterDesconto>\r
+         <!--Zero or more repetitions:-->\r
+         <descontosFlexiveis>\r
+            <!--Optional:-->\r
+            <descontoEspecial>\r
+               <!--Optional:-->\r
+               <valor>?</valor>\r
+            </descontoEspecial>\r
+            <!--Zero or more repetitions:-->\r
+            <devolutivas>\r
+               <!--Optional:-->\r
+               <codigo>?</codigo>\r
+               <!--Optional:-->\r
+               <descricao>?</descricao>\r
+               <!--Optional:-->\r
+               <mensagem>?</mensagem>\r
+               <!--Optional:-->\r
+               <tipo>?</tipo>\r
+            </devolutivas>\r
+            <!--Zero or more repetitions:-->\r
+            <errosSistema>\r
+               <!--Optional:-->\r
+               <descricao>?</descricao>\r
+            </errosSistema>\r
+            <!--Zero or more repetitions:-->\r
+            <formasPagamento>\r
+               <!--Optional:-->\r
+               <codigo>?</codigo>\r
+               <!--Optional:-->\r
+               <descricao>?</descricao>\r
+               <!--Zero or more repetitions:-->\r
+               <parcelamentos>\r
+                  <!--Optional:-->\r
+                  <descricao>?</descricao>\r
+                  <!--Optional:-->\r
+                  <percentualJurosMes>?</percentualJurosMes>\r
+                  <!--Optional:-->\r
+                  <quantidadeParcela>?</quantidadeParcela>\r
+                  <!--Optional:-->\r
+                  <valorDemaisParcelas>?</valorDemaisParcelas>\r
+                  <!--Optional:-->\r
+                  <valorJuros>?</valorJuros>\r
+                  <!--Optional:-->\r
+                  <valorPrimeiraParcela>?</valorPrimeiraParcela>\r
+               </parcelamentos>\r
+            </formasPagamento>\r
+            <!--Zero or more repetitions:-->\r
+            <garantiasDesconto>\r
+               <!--Optional:-->\r
+               <codigo>?</codigo>\r
+               <!--Optional:-->\r
+               <descricao>?</descricao>\r
+               <!--Optional:-->\r
+               <descricaoValorSegurado>?</descricaoValorSegurado>\r
+               <!--Optional:-->\r
+               <enquadrada>?</enquadrada>\r
+               <!--Optional:-->\r
+               <franquia>\r
+                  <!--Optional:-->\r
+                  <codigoClasse>?</codigoClasse>\r
+                  <!--Optional:-->\r
+                  <complemento>?</complemento>\r
+                  <!--Optional:-->\r
+                  <descricaoClasse>?</descricaoClasse>\r
+                  <!--Optional:-->\r
+                  <tipoValor>?</tipoValor>\r
+                  <!--Optional:-->\r
+                  <valor>?</valor>\r
+               </franquia>\r
+               <!--Optional:-->\r
+               <itabttmax>?</itabttmax>\r
+               <!--Optional:-->\r
+               <itabttmin>?</itabttmin>\r
+               <!--Optional:-->\r
+               <percentual>?</percentual>\r
+               <!--Optional:-->\r
+               <premio>?</premio>\r
+               <!--Optional:-->\r
+               <valorSegurado>?</valorSegurado>\r
+            </garantiasDesconto>\r
+            <!--Optional:-->\r
+            <identificador>?</identificador>\r
+            <!--Optional:-->\r
+            <numeroItau>?</numeroItau>\r
+            <!--Optional:-->\r
+            <numeroOrcamentoCliente>?</numeroOrcamentoCliente>\r
+            <!--Optional:-->\r
+            <recorrenciaOnline>\r
+               <!--Optional:-->\r
+               <chassi>?</chassi>\r
+               <!--Optional:-->\r
+               <placa>?</placa>\r
+               <!--Optional:-->\r
+               <premioDesejado>?</premioDesejado>\r
+               <!--Optional:-->\r
+               <premioOriginal>?</premioOriginal>\r
+               <!--Optional:-->\r
+               <premioRecorrencia>?</premioRecorrencia>\r
+            </recorrenciaOnline>\r
+            <!--Zero or more repetitions:-->\r
+            <servicosDesconto>\r
+               <!--Optional:-->\r
+               <codigoServico>?</codigoServico>\r
+               <!--Optional:-->\r
+               <descricaoServico>?</descricaoServico>\r
+               <!--Optional:-->\r
+               <descricaoTipoServico>?</descricaoTipoServico>\r
+               <!--Optional:-->\r
+               <premio>?</premio>\r
+               <!--Optional:-->\r
+               <textoTipoServico>?</textoTipoServico>\r
+               <!--Optional:-->\r
+               <tipoServico>?</tipoServico>\r
+            </servicosDesconto>\r
+            <!--Optional:-->\r
+            <situacaoProcessamento>?</situacaoProcessamento>\r
+            <!--Optional:-->\r
+            <tipoDesconto>?</tipoDesconto>\r
+         </descontosFlexiveis>\r
+      </web:obterDesconto>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.multicalculoauto.automovel.porto.com/CalculoSeguroWeb/obterDescontoRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
