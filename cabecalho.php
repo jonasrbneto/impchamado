@@ -36,7 +36,11 @@
 		color:white;
 	}
 
-
+	.ui-dialog-titlebar {
+	  background-color: #668cff;
+	  background-image: none;
+	  color: #fff;
+	}
 
 </style>
 
@@ -66,6 +70,9 @@
 						<li class="nav-item active">
 							<a class="nav-link textoBranco" href=" relatorioQuestionario.php">Relatorios <span class="sr-only">(current)</span></a>
 						</li>
+						<li class="nav-item active">
+							<a class="nav-link textoBranco" href=" usuarios.php">Usu&aacute;rios <span class="sr-only">(current)</span></a>
+						</li>
 					<?php } 
 				} ?>				
 
@@ -91,7 +98,10 @@
 
 
 			<div id="divMensagemErro" title="Erro" style="display:none">
-
 				<p id="mensagemErro"> </p> 
+			</div>
+
+			<div id="divMensagemConfirma" class="ui-dialog-titlebar ui-widget-header" style="display: none">
+			  	<span id="mensagemConfirma" class="ui-dialog-title"></span>
 			</div>
 
